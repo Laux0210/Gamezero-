@@ -10,6 +10,7 @@ import { CommunityGrid } from "./components/CommunityGrid";
 import { FaqSection } from "./components/FaqSection";
 import { CtaSection } from "./components/CtaSection";
 import { FooterSection } from "./components/FooterSection";
+import { WhatsAppChatWidget } from "./components/WhatsAppChatWidget";
 
 export default function App() {
   return (
@@ -67,6 +68,9 @@ export default function App() {
           <FooterSection />
         </AnimatedSection>
       </div>
+
+      {/* Interactive WhatsApp Virtual Assistant */}
+      <WhatsAppChatWidget />
     </div>
   );
 }

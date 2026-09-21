@@ -92,18 +92,6 @@ export function FooterSection() {
         <p>© {new Date().getFullYear()} GAME ZER0. Todos os direitos reservados.</p>
         <p>Atendimento humano especializado • De gamer para gamer</p>
       </div>
-
-      {/* Floating WhatsApp Action Button */}
-      <a
-        href={CONTACT.whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="group fixed bottom-5 right-5 z-40 flex items-center gap-2.5 px-4 py-3 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/30 rounded-xl shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(255,255,255,0.06)] active:scale-[0.96] font-medium text-sm animate-float select-none"
-        aria-label="Falar com a GAME ZER0 no WhatsApp"
-      >
-        <Icon name="whatsapp" className="h-5 w-5 text-whatsapp group-hover:scale-110 transition-transform duration-200" />
-        <span className="hidden sm:inline">Falar no WhatsApp</span>
-      </a>
     </footer>
   );
 }

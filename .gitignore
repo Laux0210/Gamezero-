@@ -6,3 +6,5 @@ dist
 .reticle/
 .sites-runtime/
 .openai/
+bot/auth_info_baileys/
+bot/node_modules/
