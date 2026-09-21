@@ -1,6 +1,7 @@
 import { CONTACT } from "../config/contact";
 import { Icon } from "./Icons";
 import { ArrowUpRight } from "lucide-react";
+import { getAssetUrl } from "../utils/assets";
 
 const communityCards = [
   {
@@ -90,7 +91,7 @@ export function CommunityGrid() {
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card/60 aspect-[4/3] md:aspect-[5/4] flex flex-col justify-end p-5 transition-all duration-300 hover:border-white/25"
               >
                 <img
-                  src={card.image}
+                  src={getAssetUrl(card.image)}
                   alt={card.title}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover brightness-[0.75] group-hover:scale-105 transition-transform duration-500"

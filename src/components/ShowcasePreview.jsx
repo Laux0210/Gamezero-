@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
+import { getAssetUrl } from "../utils/assets";
 
 export function ShowcasePreview() {
   const containerRef = useRef(null);
@@ -166,7 +167,7 @@ export function ShowcasePreview() {
         {/* Image 1 Visual Asset */}
         <div className="relative z-10 w-full">
           <img
-            src="/fig-01-a-marca.png"
+            src={getAssetUrl("/fig-01-a-marca.png")}
             alt="FIG. 01 — A MARCA GAME ZER0. Símbolo zero estilhaçado com efeito de fragmentos"
             className="w-full h-auto object-contain block transition-transform duration-300 group-hover:scale-[1.01]"
             width="608"

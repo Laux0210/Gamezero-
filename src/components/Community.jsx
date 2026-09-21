@@ -1,6 +1,7 @@
 import { CONTACT } from "../config/contact";
 import { Icon } from "./Icons";
 import { SectionHeading } from "./SectionHeading";
+import { getAssetUrl } from "../utils/assets";
 
 const posts = [
   {
@@ -49,7 +50,7 @@ export function Community() {
             rel="noreferrer"
             key={post.href}
           >
-            <img src={post.image} alt={post.alt} loading="lazy" decoding="async" />
+            <img src={getAssetUrl(post.image)} alt={post.alt} loading="lazy" decoding="async" />
             <span className="community-post-overlay">
               <span>{post.title}</span>
               <Icon name="arrow" className="h-5 w-5" />

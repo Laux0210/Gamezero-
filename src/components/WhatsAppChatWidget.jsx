@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { CONTACT, createWhatsAppUrl } from "../config/contact";
 import { Icon } from "./Icons";
 import { X, Send, ArrowUpRight, CheckCheck, MessageSquare, Sparkles } from "lucide-react";
+import { getAssetUrl } from "../utils/assets";
 
 const INITIAL_MESSAGES = [
   {
@@ -153,7 +154,7 @@ export function WhatsAppChatWidget() {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <img
-                  src="/instagram/game-zero-logo.jpg"
+                  src={getAssetUrl("/instagram/game-zero-logo.jpg")}
                   alt="Game Zero"
                   className="w-10 h-10 rounded-xl object-cover border border-white/10"
                 />

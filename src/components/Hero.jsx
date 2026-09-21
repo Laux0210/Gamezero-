@@ -1,5 +1,6 @@
 import { CONTACT } from "../config/contact";
 import { Icon } from "./Icons";
+import { getAssetUrl } from "../utils/assets";
 
 const trust = [
   "Atendimento especializado",
@@ -51,7 +52,7 @@ export function Hero() {
           <div className="hero-visual-stage">
             <figure className="hero-visual">
               <img
-                src="/instagram/playstation-wall.jpg"
+                src={getAssetUrl("/instagram/playstation-wall.jpg")}
                 alt="Controles e jogos de PlayStation expostos na loja Game Zero"
                 width="480"
                 height="640"

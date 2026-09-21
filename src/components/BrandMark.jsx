@@ -1,3 +1,5 @@
+import { getAssetUrl } from "../utils/assets";
+
 export function BrandMark({ compact = false }) {
   return (
     <a
@@ -7,7 +9,7 @@ export function BrandMark({ compact = false }) {
     >
       <img
         className="brand-logo"
-        src="/instagram/game-zero-logo.jpg"
+        src={getAssetUrl("/instagram/game-zero-logo.jpg")}
         width="44"
         height="44"
         alt=""

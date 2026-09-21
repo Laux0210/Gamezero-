@@ -1,5 +1,6 @@
 import { CONTACT } from "../config/contact";
 import { Sparkles, ShieldCheck } from "lucide-react";
+import { getAssetUrl } from "../utils/assets";
 
 export function LargeQuote() {
   return (
@@ -17,12 +18,9 @@ export function LargeQuote() {
         <div className="flex items-center justify-center gap-4 pt-2">
           <div className="h-12 w-12 rounded-full border border-white/15 bg-black flex items-center justify-center overflow-hidden">
             <img
-              src="/instagram/game-zero-logo.jpg"
+              src={getAssetUrl("/instagram/game-zero-logo.jpg")}
               alt="Logo Game Zero"
               className="h-full w-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
             />
           </div>
           <div className="text-left">
