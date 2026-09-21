@@ -13,8 +13,31 @@ import { MENU_TEXT, RESPONSES, BOT_CONFIG } from "./knowledge.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Armazena contexto básico das conversas (Cooldown e último estado)
-const userSessions = new Map();
+const SESSIONS_FILE = path.join(__dirname, "sessions.json");
+
+// Carrega sessões salvas para não reenviar menu após reinicializações
+function loadSessions() {
+  try {
+    if (fs.existsSync(SESSIONS_FILE)) {
+      const raw = fs.readFileSync(SESSIONS_FILE, "utf-8");
+      return new Map(Object.entries(JSON.parse(raw)));
+    }
+  } catch (err) {
+    console.error("Erro ao carregar sessions.json:", err.message);
+  }
+  return new Map();
+}
+
+function saveSessions(sessions) {
+  try {
+    const obj = Object.fromEntries(sessions);
+    fs.writeFileSync(SESSIONS_FILE, JSON.stringify(obj, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Erro ao salvar sessions.json:", err.message);
+  }
+}
+
+const userSessions = loadSessions();
 
 function updateQrHtml(qrString) {
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(qrString)}`;
@@ -145,10 +168,20 @@ async function startBot() {
     if (type !== "notify") return;
 
     for (const msg of messages) {
-      // Ignorar mensagens enviadas pelo próprio bot ou de status/grupos
-      if (!msg.message || msg.key.fromMe) continue;
       const from = msg.key.remoteJid;
       if (!from || from.endsWith("@g.us") || from === "status@broadcast") continue;
+
+      // Se a mensagem foi enviada pelo próprio atendente (pelo celular ou WhatsApp Web oficial):
+      if (msg.key.fromMe) {
+        // O atendente humano falou! Marca a conversa como assumida por humano para o bot não intrometer
+        const session = userSessions.get(from) || { hasReceivedMenu: true, transferredToHuman: true };
+        session.transferredToHuman = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+        continue;
+      }
+
+      if (!msg.message) continue;
 
       // Extrair texto da mensagem
       const messageContent =
@@ -162,41 +195,139 @@ async function startBot() {
 
       // Cooldown de 2 segundos para evitar loops
       const now = Date.now();
-      const session = userSessions.get(from) || { lastMsgTime: 0, state: null };
-      if (now - session.lastMsgTime < 2000) {
+      const session = userSessions.get(from) || {
+        hasReceivedMenu: false,
+        transferredToHuman: false,
+        lastMsgTime: 0,
+        state: null,
+      };
+
+      if (now - (session.lastMsgTime || 0) < 2000) {
         continue;
       }
       session.lastMsgTime = now;
-      userSessions.set(from, session);
 
       console.log(`📩 Mensagem recebida de [${from.split("@")[0]}]: "${text}"`);
 
-      // Se o usuário está mandando fotos ou descrição para avaliação de troca
-      if (session.state === "aguardando_dados_troca" && (msg.message.imageMessage || text.length > 5)) {
+      // 1. O cliente solicitou explicitamente o menu novamente?
+      const isRequestingMenu = [
+        "menu",
+        "#menu",
+        "opcoes",
+        "opções",
+        "inicio",
+        "início",
+        "voltar",
+        "ajuda",
+      ].includes(lower);
+
+      if (isRequestingMenu) {
+        session.hasReceivedMenu = true;
+        session.transferredToHuman = false;
         session.state = null;
         userSessions.set(from, session);
+        saveSessions(userSessions);
+
+        await sock.sendPresenceUpdate("composing", from);
+        await new Promise((r) => setTimeout(r, 600));
+        await sock.sendMessage(from, { text: MENU_TEXT });
+        console.log(`📤 Menu enviado para [${from.split("@")[0]}] por solicitação.`);
+        continue;
+      }
+
+      // 2. Se a conversa já foi transferida para humano, o bot permanece em silêncio
+      if (session.transferredToHuman) {
+        console.log(`ℹ️ [${from.split("@")[0]}] em atendimento humano. Bot em silêncio.`);
+        continue;
+      }
+
+      // 3. Se o usuário está mandando fotos ou descrição para avaliação de troca
+      if (session.state === "aguardando_dados_troca" && (msg.message.imageMessage || text.length > 5)) {
+        session.state = null;
+        session.transferredToHuman = true; // Passa para a equipe humana avaliar
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, {
-          text: `📸 *Recebido!* Nossa equipe de bancada da GAME ZER0 recebeu suas informações e avaliará seu console com base no estado e fotos enviadas. Responderemos em breve! 🎮`,
+          text: `📸 *Fotos e dados recebidos!* Nossa equipe de bancada da GAME ZER0 avaliará o seu console e responderá aqui em instantes. 🎮`,
         });
         continue;
       }
 
-      // Roteamento de comandos e opções
-      if (text === "1" || lower.includes("consoles") || lower.includes("acervo") || lower.includes("estoque")) {
+      // 4. Seleção numérica das opções do menu
+      if (text === "1" || lower === "1" || lower === "um") {
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, { text: RESPONSES.consoles });
-      } else if (text === "2" || lower.includes("troca") || lower.includes("upgrade") || lower.includes("avaliar")) {
-        session.state = "aguardando_dados_troca";
+        session.hasReceivedMenu = true;
         userSessions.set(from, session);
+        saveSessions(userSessions);
+        continue;
+      }
+
+      if (text === "2" || lower === "2" || lower === "dois") {
+        session.state = "aguardando_dados_troca";
+        session.hasReceivedMenu = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, { text: RESPONSES.troca });
-      } else if (text === "3" || lower.includes("encomenda") || lower.includes("raro") || lower.includes("jogo")) {
+        continue;
+      }
+
+      if (text === "3" || lower === "3" || lower === "tres" || lower === "três") {
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, { text: RESPONSES.encomendas });
-      } else if (text === "4" || lower.includes("horario") || lower.includes("endereco") || lower.includes("onde")) {
+        session.hasReceivedMenu = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+        continue;
+      }
+
+      if (text === "4" || lower === "4" || lower === "quatro") {
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, { text: RESPONSES.horarios });
-      } else if (text === "5" || lower.includes("humano") || lower.includes("atendente") || lower.includes("especialista")) {
+        session.hasReceivedMenu = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+        continue;
+      }
+
+      if (text === "5" || lower === "5" || lower === "cinco" || lower.includes("humano") || lower.includes("atendente")) {
+        session.transferredToHuman = true;
+        session.hasReceivedMenu = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+        await sock.sendPresenceUpdate("composing", from);
         await sock.sendMessage(from, { text: RESPONSES.humano });
-      } else {
-        // Envia o menu principal interativo
+        continue;
+      }
+
+      // 5. Se o cliente NUNCA recebeu o menu (primeira interação):
+      // Envia o menu APENAS UMA VEZ
+      if (!session.hasReceivedMenu) {
+        session.hasReceivedMenu = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+
+        await sock.sendPresenceUpdate("composing", from);
+        await new Promise((r) => setTimeout(r, 800));
         await sock.sendMessage(from, { text: MENU_TEXT });
+        console.log(`📤 Primeiro contato: Menu enviado para [${from.split("@")[0]}].`);
+        continue;
+      }
+
+      // 6. O cliente JÁ recebeu o menu anteriormente e mandou texto livre:
+      // NÃO reenvia o menu! Avisa que a equipe responderá e transfere para atendimento humano
+      if (!session.transferredToHuman) {
+        session.transferredToHuman = true;
+        userSessions.set(from, session);
+        saveSessions(userSessions);
+
+        await sock.sendPresenceUpdate("composing", from);
+        await sock.sendMessage(from, {
+          text: `Mensagem recebida! Nossa equipe responderá sua mensagem em breve. 🚀\n\n_(Para ver o menu de opções a qualquer momento, digite *menu*)_`,
+        });
       }
     }
   });
