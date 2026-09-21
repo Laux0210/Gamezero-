@@ -19,19 +19,19 @@ colors:
 typography:
   display:
     fontFamily: '"Instrument Serif", Georgia, serif'
-    fontSize: "clamp(3.5rem, 7.25vw, 6rem)"
+    fontSize: "clamp(3.7rem, 7.2vw, 5.9rem)"
     fontWeight: 400
-    lineHeight: 0.96
-    letterSpacing: "-0.025em"
+    lineHeight: 0.91
+    letterSpacing: "-0.032em"
   headline:
     fontFamily: '"Instrument Serif", Georgia, serif'
-    fontSize: "3rem"
+    fontSize: "clamp(3.5rem, 7vw, 6rem)"
     fontWeight: 400
-    lineHeight: 0.98
-    letterSpacing: "-0.025em"
+    lineHeight: 0.92
+    letterSpacing: "-0.03em"
   title:
     fontFamily: '"Instrument Serif", Georgia, serif'
-    fontSize: "clamp(2.5rem, 5vw, 4.5rem)"
+    fontSize: "clamp(2.75rem, 5vw, 4.6rem)"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.02em"
@@ -188,7 +188,7 @@ A paleta é quase monocromática e usa cor somente quando ela comunica estado, c
 
 ### Hierarchy
 
-- **Display** (`display`): título do hero, curto, central e de máxima presença.
+- **Display** (`display`): título do hero, curto e de máxima presença, ocupando a coluna editorial esquerda no desktop.
 - **Headline** (`headline`): títulos de seção; cresce responsivamente até a escala editorial grande do desktop.
 - **Title** (`title`): títulos de rota e mensagens de decisão dentro dos módulos.
 - **Body** (`body`): descrições e conteúdo explicativo, normalmente limitado a cerca de 36–40rem.
@@ -204,17 +204,18 @@ A paleta é quase monocromática e usa cor somente quando ela comunica estado, c
 
 O conteúdo usa um contêiner central de até 1280px. A margem interna horizontal progride de mobile para tablet e desktop pelos tokens `shell-inline-*`; o respiro vertical usa a progressão `shell-block-*`. Os breakpoints implementados são 640px e 1024px.
 
-O mobile é a origem do layout: pilhas verticais, tabs em duas colunas e CTAs de largura disponível. A partir de 640px, prova e comunidade ganham grids; em 1024px, a Central de Próxima Jogada assume três áreas — rotas, painel ativo e horário — enquanto processo, prova editorial e rodapé formam composições assimétricas. Seções são conectadas por bordas contínuas, não por cartões flutuantes soltos.
+O mobile é a origem do layout: pilhas verticais, tabs em duas colunas e CTAs de largura disponível. A partir de 640px, prova e comunidade ganham grids; em 1024px, o hero assume duas colunas — chamada editorial à esquerda e fotografia real com selo de 13 anos à direita — e a Central de Próxima Jogada assume três áreas: rotas, painel ativo e horário. Processo, prova editorial e rodapé formam composições assimétricas. Seções são conectadas por bordas contínuas, não por cartões flutuantes soltos.
 
-O primeiro viewport preserva o hero e seu foco central. Em seguida, a faixa de prova e as quatro rotas convertem autoridade em escolha. Essa sequência pertence a esta landing; novas superfícies devem reutilizar os princípios espaciais sem copiar obrigatoriamente a mesma ordem.
+O primeiro viewport preserva o hero e o equilíbrio entre mensagem e evidência fotográfica. Em seguida, a faixa de gerações atendidas e as quatro rotas convertem autoridade em escolha. Essa sequência pertence a esta landing; novas superfícies devem reutilizar os princípios espaciais sem copiar obrigatoriamente a mesma ordem.
 
 ## Elevation & Depth
 
-O sistema é plano por padrão. Profundidade vem de grafites sobre preto, divisores de 1px, vinheta no hero, gradiente sobre fotografias e uma malha técnica muito sutil. Sombras não elevam cartões: a única sombra persistente pertence ao atalho flutuante do WhatsApp, enquanto o pulso do hero é um sinal animado.
+O sistema é plano por padrão. Profundidade vem de grafites sobre preto, divisores de 1px, vinheta no hero, gradiente sobre fotografias e uma malha técnica muito sutil. Sombras persistentes são reservadas a elementos que precisam se separar do fundo: o atalho flutuante do WhatsApp, a fotografia principal e o selo de 13 anos. O pulso do hero é um sinal animado.
 
 ### Shadow Vocabulary
 
 - **Atalho flutuante:** sombra densa sob o botão fixo do WhatsApp para separá-lo do conteúdo durante a rolagem.
+- **Evidência do hero:** sombra profunda e neutra na fotografia principal e no selo de 13 anos para preservar leitura sobre o preto.
 - **Pulso de disponibilidade:** anel efêmero no pequeno indicador do hero; nunca aplicado a contêineres.
 
 **The Flat-by-Default Rule.** Superfícies em repouso são separadas por tom e borda. Sombra é exceção funcional, não acabamento universal.

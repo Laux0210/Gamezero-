@@ -72,7 +72,7 @@ export function NextMove() {
   }
 
   return (
-    <section id="especialidades" className="next-move section-shell">
+    <section id="atendimento" className="next-move section-shell">
       <div className="proof-rail" aria-label="Informações oficiais da Game Zero">
         {proof.map(([value, label]) => (
           <div className="proof-item" key={value}>
@@ -119,7 +119,6 @@ export function NextMove() {
           aria-labelledby={`move-tab-${activeRoute.id}`}
           key={activeRoute.id}
         >
-          <span className="move-panel-status" aria-hidden="true">ROTA ATIVA</span>
           <h3>{activeRoute.title}</h3>
           <p>{activeRoute.text}</p>
           <a

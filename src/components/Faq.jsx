@@ -11,7 +11,7 @@ export function Faq() {
   return (
     <section className="deferred-section section-shell bg-ink">
       <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
-        <SectionHeading title="Perguntas antes do próximo level." />
+        <SectionHeading title="Dúvidas que vale resolver antes." />
         <div className="border-t border-line">
           {questions.map(([question, answer]) => (
             <details className="faq-item group border-b border-line" key={question}>

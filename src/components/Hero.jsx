@@ -13,12 +13,7 @@ export function Hero() {
       <div className="hero-frame relative z-10 mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-[1440px] flex-col">
         <div className="hero-layout flex flex-1 items-center py-24 lg:py-28">
           <div className="hero-content">
-            <div className="hero-eyebrow">
-              <span className="hero-pulse" aria-hidden="true" />
-              Consultoria gamer, trocas e encomendas
-            </div>
-
-            <h1 className="hero-title mt-8 max-w-3xl font-display font-normal text-balance text-white">
+            <h1 className="hero-title max-w-3xl font-display font-normal text-balance text-white">
               <span className="hero-title-line hero-title-line-first">O ponto zero da sua</span>{" "}
               <span className="hero-title-line hero-title-line-second">experiência gamer.</span>
             </h1>
@@ -38,7 +33,12 @@ export function Hero() {
               </a>
             </div>
 
-            <ul className="hero-trust mt-10 flex max-w-2xl flex-wrap gap-x-6 gap-y-3" aria-label="Compromissos da GAME ZER0">
+            <div className="hero-availability mt-10" aria-label="Atendimento disponível nos canais oficiais">
+              <span className="hero-pulse" aria-hidden="true" />
+              Atendimento humano pelo WhatsApp e Instagram
+            </div>
+
+            <ul className="hero-trust mt-6 flex max-w-2xl flex-wrap gap-x-6 gap-y-3" aria-label="Compromissos da GAME ZER0">
               {trust.map((item) => (
                 <li className="flex items-center gap-2 text-sm leading-5 text-muted" key={item}>
                   <Icon name="check" className="h-4 w-4 shrink-0 text-white" />
@@ -48,25 +48,31 @@ export function Hero() {
             </ul>
           </div>
 
-          <figure className="hero-visual">
-            <img
-              src="/instagram/playstation-wall.jpg"
-              alt="Controles e jogos de PlayStation expostos na loja Game Zero"
-              width="480"
-              height="640"
-              fetchPriority="high"
-            />
-            <figcaption>Dentro da GAME ZER0</figcaption>
-          </figure>
+          <div className="hero-visual-stage">
+            <figure className="hero-visual">
+              <img
+                src="/instagram/playstation-wall.jpg"
+                alt="Controles e jogos de PlayStation expostos na loja Game Zero"
+                width="480"
+                height="640"
+                fetchPriority="high"
+              />
+              <figcaption>Acervo real da loja</figcaption>
+            </figure>
+            <div className="hero-tenure" aria-label="Treze anos de atendimento">
+              <strong>13</strong>
+              <span>anos entre gerações</span>
+            </div>
+          </div>
         </div>
 
         <div className="hero-platforms">
-          <p className="hero-platforms-label">Experiência especializada</p>
+          <p className="hero-platforms-label">Do clássico ao atual</p>
           <ul className="hero-platforms-list" aria-label="Plataformas e serviços">
-            <li>PlayStation 5</li>
-            <li>Xbox Series</li>
-            <li>Nintendo Switch</li>
-            <li>Setups e upgrades</li>
+            <li>PlayStation 1–5 e PS Vita</li>
+            <li>Xbox</li>
+            <li>Nintendo</li>
+            <li>Jogos, acessórios e setups</li>
           </ul>
         </div>
       </div>
