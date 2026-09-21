@@ -1,7 +1,7 @@
 const defaultMessage =
   "Olá! Vim pelo site da Game Zero e gostaria de tirar uma dúvida.";
 
-const fallbackWhatsAppNumber = "5551996159863";
+const fallbackWhatsAppNumber = "555192042236";
 const configuredNumber = (import.meta.env.VITE_WHATSAPP_NUMBER ?? "").replace(/\D/g, "");
 const whatsappNumber = configuredNumber || fallbackWhatsAppNumber;
 
@@ -12,7 +12,7 @@ export function createWhatsAppUrl(message = defaultMessage) {
 export const CONTACT = {
   instagramHandle: "@lojagamezero",
   instagramUrl: "https://www.instagram.com/lojagamezero/",
-  whatsappLabel: "(51) 99615-9863",
+  whatsappLabel: "(51) 9204-2236",
   whatsappUrl: createWhatsAppUrl(),
   hours: {
     weekdays: "10h30 às 18h",
