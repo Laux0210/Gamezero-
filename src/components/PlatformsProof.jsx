@@ -118,13 +118,13 @@ export function PlatformsProof() {
             href={createWhatsAppUrl(`Olá! Vim pelo site da Game Zero e gostaria de atendimento para ${p.name}.`)}
             target="_blank"
             rel="noreferrer"
-            className="group flex flex-col items-center justify-center aspect-[1/0.95] sm:aspect-square p-4 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/5 hover:border-white/25 transition-all duration-200"
+            className="group relative flex flex-col items-center justify-center aspect-[1/0.95] sm:aspect-square p-4 rounded-2xl border border-white/10 bg-[#121214]/70 hover:bg-[#18191d] hover:border-white/30 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-white/[0.04] active:scale-[0.96]"
             title={`Atendimento para ${p.name}`}
           >
-            <div className="mb-3 flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all">
+            <div className="mb-3 flex items-center justify-center opacity-75 group-hover:opacity-100 group-hover:scale-110 group-hover:-rotate-1 transition-all duration-300">
               {p.icon}
             </div>
-            <span className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-zinc-300 group-hover:text-white transition-colors">
+            <span className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400 group-hover:text-white group-hover:tracking-[0.24em] transition-all duration-300">
               {p.label}
             </span>
           </a>

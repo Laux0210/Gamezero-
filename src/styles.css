@@ -1148,3 +1148,43 @@ button,
   animation: shatter-shake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes border-shimmer {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-border-shimmer {
+  animation: border-shimmer 3.5s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+

@@ -142,10 +142,10 @@ export function HeroSection() {
 
       {/* Central Hero Typography and Action */}
       <div className="relative z-10 flex flex-col items-center max-w-3xl mt-20 sm:mt-24 md:mt-28 mb-2 px-2">
-        {/* Story Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-xs font-semibold text-silver mb-6">
+        {/* Story Badge / Floating Balloon */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] backdrop-blur-sm text-xs font-medium text-silver mb-6 transition-all duration-300 animate-float animate-border-shimmer cursor-default shadow-sm select-none">
           <span className="inline-block h-2 w-2 rounded-full bg-white animate-pulse" />
-          <span>13 anos de atendimento gamer • De PS1 a PS5</span>
+          <span>13 anos de atendimento gamer • De PS2 a PS5</span>
         </div>
 
         {/* Hero Title */}
@@ -165,18 +165,18 @@ export function HeroSection() {
             href={CONTACT.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm active:scale-[0.98]"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/30 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:shadow-white/[0.04] active:scale-[0.97]"
           >
             <span>Falar com nossa equipe</span>
-            <ArrowUpRight className="h-4 w-4 text-zinc-400" />
+            <ArrowUpRight className="h-4 w-4 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
           </a>
           <a
             href={CONTACT.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 hover:border-white/20 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 active:scale-[0.98]"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 hover:border-white/25 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97]"
           >
-            <Icon name="instagram" className="h-4 w-4 text-zinc-400" />
+            <Icon name="instagram" className="h-4 w-4 text-zinc-400 group-hover:text-white transition-colors duration-200" />
             <span>@lojagamezero</span>
           </a>
         </div>

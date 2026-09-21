@@ -82,7 +82,7 @@ export function ServicesPricing() {
             }`}
           >
             {svc.popular && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#18191d] text-white border border-white/20 text-[10px] font-semibold tracking-wider px-3.5 py-1 rounded-xl shadow-md animate-pulse-subtle">
                 Recomendado
               </div>
             )}
@@ -90,7 +90,7 @@ export function ServicesPricing() {
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
                 <h3 className="text-xl sm:text-2xl font-display font-semibold tracking-[-0.025em] text-white">{svc.name}</h3>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-silver">
+                <span className="text-[10px] font-medium tracking-wider px-2.5 py-1 rounded-lg bg-white/10 text-silver">
                   {svc.badge}
                 </span>
               </div>
@@ -116,11 +116,11 @@ export function ServicesPricing() {
                 href={createWhatsAppUrl(svc.message)}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 active:scale-[0.98]"
+                className="group w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/30 hover:-translate-y-0.5 hover:shadow-md hover:shadow-white/[0.04] active:scale-[0.97]"
               >
-                <MessageCircle className="h-4 w-4 text-zinc-400" />
+                <MessageCircle className="h-4 w-4 text-zinc-400 group-hover:text-white transition-colors duration-200" />
                 <span>{svc.buttonText}</span>
-                <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
+                <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
               </a>
             </div>
           </div>
