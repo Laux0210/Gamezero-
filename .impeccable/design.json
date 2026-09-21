@@ -24,6 +24,8 @@
       "headline": { "displayName": "Headline", "purpose": "Títulos grandes das seções institucionais." },
       "title": { "displayName": "Title", "purpose": "Títulos de rota e mensagens de decisão." },
       "body": { "displayName": "Body", "purpose": "Explicações, critérios e conteúdo corrente." },
+      "small": { "displayName": "Small", "purpose": "Navegação, provas curtas e metadados legíveis." },
+      "compact-title": { "displayName": "Compact Title", "purpose": "Títulos internos de cards, rotas, perguntas e links editoriais." },
       "label": { "displayName": "Label", "purpose": "Status, horários e categorias compactas." }
     },
     "shadows": [

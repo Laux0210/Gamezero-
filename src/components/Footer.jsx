@@ -9,14 +9,14 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
             <BrandMark />
-            <h2 className="mt-8 max-w-2xl font-display text-5xl font-black leading-[0.9] tracking-[-0.04em] text-white sm:text-6xl">
+            <h2 className="mt-8 max-w-2xl font-display text-5xl font-normal leading-[0.98] tracking-[-0.025em] text-balance text-white sm:text-6xl lg:text-7xl">
               Seu próximo game começa aqui.
             </h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:justify-self-end">
             <div>
               <p className="text-xs font-bold tracking-[0.14em] text-muted">ATENDIMENTO</p>
-              <p className="mt-3 max-w-xs text-sm leading-6 text-silver">
+              <p className="mt-3 max-w-xs text-base leading-7 text-silver">
                 Segunda a sexta, {CONTACT.hours.weekdays}.<br />
                 Sábado, {CONTACT.hours.saturday}.
               </p>

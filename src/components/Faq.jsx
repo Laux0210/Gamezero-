@@ -15,11 +15,11 @@ export function Faq() {
         <div className="border-t border-line">
           {questions.map(([question, answer]) => (
             <details className="faq-item group border-b border-line" key={question}>
-              <summary className="flex min-h-20 cursor-pointer list-none items-center justify-between gap-6 py-5 font-display text-2xl font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white">
+              <summary className="flex min-h-20 cursor-pointer list-none items-center justify-between gap-5 py-5 font-display text-2xl font-normal leading-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white sm:gap-6 sm:text-3xl">
                 {question}
-                <span className="faq-plus shrink-0 text-3xl font-light text-muted" aria-hidden="true">+</span>
+                <span className="faq-plus shrink-0" aria-hidden="true" />
               </summary>
-              <p className="max-w-2xl pb-7 pr-10 text-sm leading-7 text-muted">{answer}</p>
+              <p className="max-w-[65ch] pb-7 pr-10 text-base leading-7 text-muted">{answer}</p>
             </details>
           ))}
         </div>

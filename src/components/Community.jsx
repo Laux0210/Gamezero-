@@ -49,7 +49,7 @@ export function Community() {
             rel="noreferrer"
             key={post.href}
           >
-            <img src={post.image} alt={post.alt} loading="eager" decoding="async" />
+            <img src={post.image} alt={post.alt} loading="lazy" decoding="async" />
             <span className="community-post-overlay">
               <span>{post.title}</span>
               <Icon name="arrow" className="h-5 w-5" />

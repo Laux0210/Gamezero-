@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CONTACT } from "../config/contact";
 import { BrandMark } from "./BrandMark";
 import { Icon } from "./Icons";
@@ -13,13 +13,47 @@ const links = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    const previousOverflow = document.body.style.overflow;
+
+    function closeMenu({ returnFocus = false } = {}) {
+      setIsOpen(false);
+
+      if (returnFocus) {
+        window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+      }
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") closeMenu({ returnFocus: true });
+    }
+
+    function handleBreakpointChange(event) {
+      if (event.matches) closeMenu();
+    }
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
+    desktopQuery.addEventListener("change", handleBreakpointChange);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      desktopQuery.removeEventListener("change", handleBreakpointChange);
+    };
+  }, [isOpen]);
 
   return (
-    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-ink/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+    <header className="site-header fixed inset-x-0 top-0 z-50">
+      <div className="site-header-inner mx-auto flex h-18 max-w-[1280px] items-center justify-between">
         <BrandMark />
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navegação principal">
           {links.map(([label, href]) => (
             <a className="nav-link" href={href} key={href}>
               {label}
@@ -43,6 +77,7 @@ export function Header() {
         </div>
 
         <button
+          ref={menuButtonRef}
           className="icon-button mobile-menu-trigger"
           type="button"
           aria-expanded={isOpen}

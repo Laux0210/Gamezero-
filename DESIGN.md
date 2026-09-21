@@ -2,59 +2,72 @@
 name: "GAME ZER0"
 description: "Sistema institucional gamer escuro, técnico e humano, orientado à próxima ação."
 colors:
-  ink: "#08080a"
-  panel: "#111116"
-  surface: "#191920"
-  card: "#101015"
-  line: "#2d2e3b"
-  muted: "#a7a8b3"
-  silver: "#e2e8f0"
-  white: "#ffffff"
+  ink: "#000000"
+  panel: "#080808"
+  surface: "#141414"
+  card: "#0b0b0b"
+  line: "#252525"
+  muted: "#a1a4a5"
+  silver: "#d6d6d6"
+  white: "#f0f0f0"
   black: "#000000"
-  signal: "#b8ff2c"
-  signal-ink: "#101600"
-  step: "#757789"
+  signal: "#f0f0f0"
+  signal-ink: "#090909"
+  step: "#686868"
   whatsapp: "#25d366"
   whatsapp-hover: "#42e77e"
 typography:
   display:
-    fontFamily: '"Barlow Condensed", system-ui, sans-serif'
-    fontSize: "clamp(3.5rem, 7.4vw, 6rem)"
-    fontWeight: 700
-    lineHeight: 0.9
-    letterSpacing: "-0.035em"
-  headline:
-    fontFamily: '"Barlow Condensed", system-ui, sans-serif'
-    fontSize: "3rem"
-    fontWeight: 800
-    lineHeight: 0.92
-    letterSpacing: "-0.03em"
-  title:
-    fontFamily: '"Barlow Condensed", system-ui, sans-serif'
-    fontSize: "clamp(2.5rem, 5vw, 4.5rem)"
-    fontWeight: 700
-    lineHeight: 0.95
+    fontFamily: '"Instrument Serif", Georgia, serif'
+    fontSize: "clamp(3.5rem, 7.25vw, 6rem)"
+    fontWeight: 400
+    lineHeight: 0.96
     letterSpacing: "-0.025em"
+  headline:
+    fontFamily: '"Instrument Serif", Georgia, serif'
+    fontSize: "3rem"
+    fontWeight: 400
+    lineHeight: 0.98
+    letterSpacing: "-0.025em"
+  title:
+    fontFamily: '"Instrument Serif", Georgia, serif'
+    fontSize: "clamp(2.5rem, 5vw, 4.5rem)"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "-0.02em"
   body:
-    fontFamily: '"Barlow", system-ui, sans-serif'
+    fontFamily: '"Inter", system-ui, sans-serif'
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.7
     letterSpacing: "normal"
+  small:
+    fontFamily: '"Inter", system-ui, sans-serif'
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  compact-title:
+    fontFamily: '"Instrument Serif", Georgia, serif'
+    fontSize: "1.75rem"
+    fontWeight: 400
+    lineHeight: 1.08
+    letterSpacing: "normal"
   label:
-    fontFamily: '"Barlow", system-ui, sans-serif'
+    fontFamily: '"Inter", system-ui, sans-serif'
     fontSize: "0.75rem"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "0.12em"
 rounded:
-  square: "0px"
+  control: "14px"
+  panel: "24px"
   pill: "999px"
 spacing:
   shell-inline-mobile: "1.25rem"
   shell-inline-tablet: "2rem"
   shell-inline-desktop: "3rem"
-  shell-block-mobile: "6rem"
+  shell-block-mobile: "5rem"
   shell-block-tablet: "7rem"
   shell-block-desktop: "8rem"
 components:
@@ -62,59 +75,59 @@ components:
     backgroundColor: "{colors.white}"
     textColor: "{colors.black}"
     typography: "{typography.label}"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.control}"
     padding: "0 1.4rem"
     height: "3.25rem"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.white}"
     typography: "{typography.label}"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.control}"
     padding: "0 1.4rem"
     height: "3.25rem"
   button-signal:
     backgroundColor: "{colors.signal}"
     textColor: "{colors.signal-ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.control}"
     padding: "0 1.4rem"
     height: "3.25rem"
   route-tab:
     backgroundColor: "transparent"
     textColor: "{colors.muted}"
-    rounded: "{rounded.square}"
+    rounded: "0px"
     padding: "1rem"
     height: "7.5rem"
   route-tab-active:
     backgroundColor: "{colors.signal}"
     textColor: "{colors.signal-ink}"
-    rounded: "{rounded.square}"
+    rounded: "0px"
     padding: "1rem"
     height: "7.5rem"
   nav-link:
     backgroundColor: "transparent"
     textColor: "{colors.muted}"
     typography: "{typography.label}"
-    rounded: "{rounded.square}"
+    rounded: "0px"
     height: "2.75rem"
   proof-item:
     backgroundColor: "transparent"
     textColor: "{colors.white}"
-    rounded: "{rounded.square}"
+    rounded: "0px"
     padding: "1.25rem 0"
   faq-item:
     backgroundColor: "transparent"
     textColor: "{colors.white}"
-    rounded: "{rounded.square}"
+    rounded: "0px"
     padding: "1.25rem 0"
   community-card:
     backgroundColor: "{colors.card}"
     textColor: "{colors.white}"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.panel}"
   whatsapp-action:
     backgroundColor: "{colors.whatsapp}"
     textColor: "#06180c"
-    rounded: "{rounded.square}"
+    rounded: "{rounded.control}"
     padding: "0 0.8rem"
     height: "3.25rem"
 ---
@@ -125,16 +138,16 @@ components:
 
 **Creative North Star: "Central de Próxima Jogada"**
 
-A GAME ZER0 apresenta um universo institucional gamer escuro, preciso e adulto. Preto profundo e grafites foscos formam o campo; branco e prata sustentam leitura e hierarquia; linhas técnicas organizam a informação; o verde-limão aparece como sinal operacional raro, nunca como decoração dominante. A fotografia real da loja e do acervo ancora a interface em evidência concreta.
+A GAME ZER0 apresenta um universo institucional gamer escuro, editorial e adulto. Preto absoluto e grafites neutros formam o campo; branco suave e cinzas frios sustentam leitura e hierarquia; superfícies arredondadas de baixo contraste evocam hardware premium. A fotografia real da loja e do acervo ancora a interface em evidência concreta.
 
 A experiência alterna grandes chamadas condensadas com blocos compactos e objetivos. O hero abre o mundo da marca; prova, processo, comunidade e canais oficiais conduzem a uma conversa humana. A Central de Próxima Jogada é o componente assinatura desta landing e não uma composição obrigatória para toda nova tela.
 
 **Key Characteristics:**
 
-- Contraste alto sobre preto e grafite, com profundidade construída por camadas tonais e linhas.
-- Tipografia condensada, robusta e curta para impacto; Barlow regular para explicação clara.
-- Geometria quadrada, compacta e técnica, sem cartões arredondados genéricos.
-- Verde-limão reservado para seleção, status e ação contextual; verde do WhatsApp reservado ao canal.
+- Contraste alto sobre preto verdadeiro, com profundidade construída por brilho radial, camadas tonais e bordas quase invisíveis.
+- Instrument Serif dá presença editorial aos títulos; Inter mantém navegação e explicações precisas.
+- Controles com raio contido e painéis de 24px remetem a hardware premium sem cair em cartões SaaS genéricos.
+- Branco suave identifica seleção e ação principal; verde do WhatsApp continua reservado exclusivamente ao canal.
 - Fotografias oficiais da loja e do acervo usadas como prova, com crédito e origem preservados.
 
 ## Colors
@@ -143,8 +156,8 @@ A paleta é quase monocromática e usa cor somente quando ela comunica estado, c
 
 ### Primary
 
-- **Verde Sinal** (`signal`): identifica rota ativa e CTA contextual dentro da Central de Próxima Jogada.
-- **Tinta do Sinal** (`signal-ink`): mantém contraste sobre o verde de estado.
+- **Branco Sinal** (`signal`): identifica rota ativa e CTA contextual dentro da Central de Próxima Jogada.
+- **Tinta do Sinal** (`signal-ink`): mantém contraste sobre a superfície clara de estado.
 
 ### Secondary
 
@@ -162,16 +175,16 @@ A paleta é quase monocromática e usa cor somente quando ela comunica estado, c
 - **Branco de Contraste** (`white`) e **Preto de Inversão** (`black`): títulos, foco e bloco editorial invertido.
 - **Cinza de Etapa** (`step`): numeração do processo em repouso.
 
-**The Signal, Not Surface Rule.** O verde-limão indica decisão ou estado operacional; não preenche seções inteiras nem substitui a hierarquia tipográfica.
+**The Signal, Not Surface Rule.** O branco suave indica decisão ou estado operacional; não preenche seções inteiras nem substitui a hierarquia tipográfica.
 
 **The Channel Color Rule.** O verde do WhatsApp não é cor geral da marca: ele identifica somente o acesso ao canal oficial.
 
 ## Typography
 
-**Display Font:** Barlow Condensed, com fallback `system-ui, sans-serif`.
-**Body Font:** Barlow, com fallback `system-ui, sans-serif`.
+**Display Font:** Instrument Serif, com fallback `Georgia, serif`.
+**Body Font:** Inter, com fallback `system-ui, sans-serif`.
 
-**Character:** A Barlow Condensed concentra energia gamer e autoridade em pouco espaço. A Barlow regular desacelera a leitura de explicações, horários e critérios sem romper o mesmo DNA grotesco.
+**Character:** A Instrument Serif introduz sofisticação editorial e faz o contraste com o hardware monocromático. A Inter mantém explicações, horários e controles claros e contemporâneos.
 
 ### Hierarchy
 
@@ -179,15 +192,17 @@ A paleta é quase monocromática e usa cor somente quando ela comunica estado, c
 - **Headline** (`headline`): títulos de seção; cresce responsivamente até a escala editorial grande do desktop.
 - **Title** (`title`): títulos de rota e mensagens de decisão dentro dos módulos.
 - **Body** (`body`): descrições e conteúdo explicativo, normalmente limitado a cerca de 36–40rem.
+- **Small** (`small`): navegação, provas curtas e metadados legíveis que pedem menos ênfase sem cair abaixo de 14px.
+- **Compact Title** (`compact-title`): títulos internos de cards, rotas, perguntas e links editoriais.
 - **Label** (`label`): status, horários e pequenas categorias em caixa alta e espaçamento aberto.
 
-**The Condensed Hierarchy Rule.** Barlow Condensed conduz títulos, números e links de alto impacto; parágrafos permanecem em Barlow para legibilidade.
+**The Editorial Hierarchy Rule.** Instrument Serif conduz títulos e mensagens de decisão; parágrafos e controles permanecem em Inter para legibilidade.
 
 **The Short Headline Rule.** A escala grande depende de frases curtas e diretas; não comprima parágrafos inteiros no estilo display.
 
 ## Layout
 
-O conteúdo usa um contêiner central de até 1440px. A margem interna horizontal progride de mobile para tablet e desktop pelos tokens `shell-inline-*`; o respiro vertical usa a progressão `shell-block-*`. Os breakpoints implementados são 640px e 1024px.
+O conteúdo usa um contêiner central de até 1280px. A margem interna horizontal progride de mobile para tablet e desktop pelos tokens `shell-inline-*`; o respiro vertical usa a progressão `shell-block-*`. Os breakpoints implementados são 640px e 1024px.
 
 O mobile é a origem do layout: pilhas verticais, tabs em duas colunas e CTAs de largura disponível. A partir de 640px, prova e comunidade ganham grids; em 1024px, a Central de Próxima Jogada assume três áreas — rotas, painel ativo e horário — enquanto processo, prova editorial e rodapé formam composições assimétricas. Seções são conectadas por bordas contínuas, não por cartões flutuantes soltos.
 
@@ -206,17 +221,17 @@ O sistema é plano por padrão. Profundidade vem de grafites sobre preto, diviso
 
 ## Shapes
 
-A linguagem formal é ortogonal: botões, painéis, cartões, fotos, tabs, ícones e campos de navegação usam cantos retos (`square`). Bordas finas desenham a estrutura e podem continuar entre itens adjacentes. O raio `pill` aparece apenas em sinais puntuais — pulso e marcadores — e não em contêineres ou CTAs.
+A linguagem formal alterna controles arredondados de 14px e painéis de 24px. Bordas finas desenham a estrutura interna; o raio `pill` aparece apenas em sinais compactos, como o indicador do hero e legendas fotográficas.
 
-**The Square Hardware Rule.** Componentes devem parecer módulos de hardware: retos, encaixados e precisos. Evite pílulas e cartões excessivamente suaves.
+**The Premium Hardware Rule.** Componentes devem parecer superfícies de hardware premium: precisos, escuros e discretamente arredondados. Evite sombras macias genéricas e raios aplicados sem hierarquia.
 
 ## Components
 
 ### Buttons
 
-- **Shape:** retangular, sem arredondamento, com borda fina e altura de toque confortável.
+- **Shape:** retangular com raio de 14px, borda luminosa discreta e altura de toque confortável.
 - **Light:** CTA principal do hero e do header; fundo branco, texto preto e resposta de pressão por escala.
-- **Signal:** ação contextual da rota ativa; usa o verde-limão e volta a branco no hover.
+- **Signal:** ação contextual da rota ativa; usa branco suave com texto preto.
 - **Outline:** ação secundária; fundo transparente, linha técnica e reforço de contraste no hover.
 - **Focus:** contorno branco externo. O estado ativo reduz a escala discretamente; movimento é removido quando o usuário prefere menos animação.
 
@@ -226,11 +241,11 @@ Links desktop usam texto pequeno e neutro, ficando brancos no hover. O header pe
 
 ### Central de Próxima Jogada
 
-Componente assinatura desta landing. Quatro tabs quadradas apresentam intenções reais; apenas a seleção ativa recebe o verde-limão. O painel associado troca título, explicação e CTA, e o bloco lateral mantém horários oficiais visíveis. Setas, Home e End participam da navegação por teclado; foco é sempre explícito.
+Componente assinatura desta landing. Quatro tabs encaixadas apresentam intenções reais; apenas a seleção ativa recebe a superfície branca. O painel associado troca título, explicação e CTA, e o bloco lateral mantém horários oficiais visíveis. Setas, Home e End participam da navegação por teclado; foco é sempre explícito.
 
 ### Proof Rail
 
-Três fatos oficiais formam uma faixa modular ligada por linhas. O valor usa Barlow Condensed; a explicação usa Barlow em cinza. No mobile, os itens empilham; em telas maiores, ocupam três colunas.
+Três fatos oficiais formam uma faixa modular ligada por linhas. Valor e explicação usam Inter em pesos distintos. No mobile, os itens empilham; em telas maiores, ocupam três colunas.
 
 ### Community Cards
 
@@ -249,15 +264,15 @@ Atalho fixo no canto inferior direito, respeitando safe area. Usa exclusivamente
 ### Do:
 
 - **Do** use preto e grafite como campo dominante, com branco para hierarquia e linhas finas para estrutura.
-- **Do** reserve o verde-limão para seleção, status e ação contextual.
-- **Do** use Barlow Condensed em títulos curtos e Barlow em explicações e metadados.
-- **Do** mantenha cantos retos, alvos de toque confortáveis, foco visível e redução de movimento.
+- **Do** reserve superfícies brancas para seleção e ação principal; o restante permanece em preto e grafite.
+- **Do** use Instrument Serif em títulos curtos e Inter em explicações, navegação e metadados.
+- **Do** mantenha raios hierárquicos, alvos de toque confortáveis, foco visível e redução de movimento.
 - **Do** use somente fotografia real autorizada, com origem e vínculo para a publicação preservados.
 
 ### Don't:
 
-- **Don't** transforme o verde-limão em fundo decorativo amplo ou o verde do WhatsApp em cor geral da marca.
-- **Don't** arredonde cartões e botões para aproximar o sistema de uma interface SaaS genérica.
+- **Don't** transforme o verde do WhatsApp em cor geral da marca.
+- **Don't** use o mesmo raio em todos os elementos nem transforme cada conteúdo em um cartão SaaS.
 - **Don't** substitua linhas e camadas tonais por sombras difusas em todos os componentes.
 - **Don't** promova a Central de Próxima Jogada a template obrigatório fora desta landing.
 - **Don't** invente estoque, preços, depoimentos ou imagens genéricas para preencher a composição.
