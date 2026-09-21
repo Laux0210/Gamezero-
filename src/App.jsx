@@ -1,3 +1,4 @@
+import React from "react";
 import { Header } from "./components/Header";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { HeroSection } from "./components/HeroSection";
