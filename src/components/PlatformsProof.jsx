@@ -130,13 +130,6 @@ export function PlatformsProof() {
           </a>
         ))}
       </div>
-
-      {/* Bottom Technical Tag matching Image 2 */}
-      <div className="mt-8 pt-4">
-        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-zinc-500">
-          O QUE VOCÊ ENCONTRA
-        </span>
-      </div>
     </section>
   );
 }
