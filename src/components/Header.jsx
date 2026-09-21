@@ -15,7 +15,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-ink/90 backdrop-blur-xl">
+    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-ink/90 backdrop-blur-xl">
       <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <BrandMark />
 

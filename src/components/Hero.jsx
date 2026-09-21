@@ -1,6 +1,6 @@
 import { CONTACT } from "../config/contact";
+import { AnimatedPaths } from "./AnimatedPaths";
 import { Icon } from "./Icons";
-import { ZeroGlyph } from "./BrandMark";
 
 const trust = [
   "Atendimento especializado",
@@ -10,20 +10,27 @@ const trust = [
 
 export function Hero() {
   return (
-    <section id="inicio" className="hero-grid relative overflow-hidden border-b border-line pt-18">
-      <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-[1440px] lg:grid-cols-[1.12fr_0.88fr]">
-        <div className="relative z-10 flex flex-col justify-center px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-          <div className="mb-10 flex items-center gap-3 text-xs font-semibold tracking-[0.16em] text-muted">
-            <span className="h-px w-10 bg-white" aria-hidden="true" />
-            CONSULTORIA • TROCAS • ENCOMENDAS
+    <section id="inicio" className="hero-shell relative overflow-hidden border-b border-line">
+      <AnimatedPaths />
+      <div className="hero-vignette" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-[1440px] flex-col px-5 sm:px-8 lg:px-12">
+        <div className="flex flex-1 flex-col items-center justify-center py-20 text-center sm:py-24 lg:py-28">
+          <div className="hero-eyebrow">
+            <span className="hero-pulse" aria-hidden="true" />
+            Consultoria gamer, trocas e encomendas
           </div>
-          <h1 className="max-w-4xl font-display text-[clamp(3.8rem,9vw,8.8rem)] font-black leading-[0.78] tracking-[-0.055em] text-balance text-white">
-            O ponto zero da sua experiência gamer.
+
+          <h1 className="mt-8 max-w-6xl font-display text-[clamp(3.55rem,8.2vw,8rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-balance text-white">
+            <span className="hero-title-line hero-title-line-first">O ponto zero da sua</span>{" "}
+            <span className="hero-title-line hero-title-line-second">experiência gamer.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-base leading-7 text-silver sm:text-lg sm:leading-8">
-            Especialistas em consoles, jogos, setups e upgrades. Atendimento personalizado de quem realmente entende e vive o mundo dos games.
+
+          <p className="mt-7 max-w-2xl text-base leading-7 text-silver sm:text-lg sm:leading-8">
+            Consoles, jogos, setups e upgrades com atendimento próximo, avaliação transparente e experiência de quem realmente vive o universo gamer.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+
+          <div className="mt-9 flex w-full max-w-xl flex-col justify-center gap-3 sm:w-auto sm:max-w-none sm:flex-row">
             <a className="button button-light min-h-13" href={CONTACT.whatsappUrl} target="_blank" rel="noreferrer">
               Falar com nossa equipe
               <Icon name="arrow" className="h-5 w-5" />
@@ -34,29 +41,24 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="mt-12 grid gap-3 border-t border-line pt-6 sm:grid-cols-3" aria-label="Compromissos da GAME ZER0">
+          <ul className="mt-10 flex max-w-3xl flex-wrap justify-center gap-x-7 gap-y-3" aria-label="Compromissos da GAME ZER0">
             {trust.map((item) => (
-              <li className="flex items-start gap-2 text-sm leading-5 text-muted" key={item}>
-                <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-white" />
+              <li className="flex items-center gap-2 text-sm leading-5 text-muted" key={item}>
+                <Icon name="check" className="h-4 w-4 shrink-0 text-white" />
                 {item}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="zero-stage relative min-h-[28rem] overflow-hidden border-t border-line lg:min-h-0 lg:border-l lg:border-t-0">
-          <span className="stage-index" aria-hidden="true">GZ / 00</span>
-          <div className="zero-orbit" aria-hidden="true">
-            <ZeroGlyph className="h-full w-full" />
-          </div>
-          <div className="stage-card">
-            <span className="h-2 w-2 rounded-full bg-white shadow-[0_0_16px_#fff]" aria-hidden="true" />
-            <div>
-              <p className="text-xs font-bold tracking-[0.14em] text-white">ONLINE AGORA</p>
-              <p className="mt-1 text-sm text-muted">Chame e fale com quem entende.</p>
-            </div>
-          </div>
-          <p className="stage-caption" aria-hidden="true">PLAY / EVOLVE / REPEAT</p>
+        <div className="hero-platforms">
+          <p className="hero-platforms-label">Experiência especializada</p>
+          <ul className="hero-platforms-list" aria-label="Plataformas e serviços">
+            <li>PlayStation 5</li>
+            <li>Xbox Series</li>
+            <li>Nintendo Switch</li>
+            <li>Setups e upgrades</li>
+          </ul>
         </div>
       </div>
     </section>
