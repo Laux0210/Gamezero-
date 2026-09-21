@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T06:46:01Z",
+  "title": "Design System: GAME ZER0",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Preto Base", "canonical": "#08080a", "tonalRamp": ["oklch(15% 0.006 285)", "oklch(25% 0.006 285)", "oklch(35% 0.006 285)", "oklch(47% 0.006 285)", "oklch(59% 0.006 285)", "oklch(71% 0.006 285)", "oklch(83% 0.006 285)", "oklch(95% 0.006 285)"] },
+      "panel": { "role": "neutral", "displayName": "Grafite de Painel", "canonical": "#111116", "tonalRamp": ["oklch(15% 0.008 285)", "oklch(25% 0.008 285)", "oklch(35% 0.008 285)", "oklch(47% 0.008 285)", "oklch(59% 0.008 285)", "oklch(71% 0.008 285)", "oklch(83% 0.008 285)", "oklch(95% 0.008 285)"] },
+      "surface": { "role": "neutral", "displayName": "Grafite de Interação", "canonical": "#191920", "tonalRamp": ["oklch(15% 0.012 285)", "oklch(25% 0.012 285)", "oklch(35% 0.012 285)", "oklch(47% 0.012 285)", "oklch(59% 0.012 285)", "oklch(71% 0.012 285)", "oklch(83% 0.012 285)", "oklch(95% 0.012 285)"] },
+      "card": { "role": "neutral", "displayName": "Grafite de Cartão", "canonical": "#101015", "tonalRamp": ["oklch(15% 0.008 285)", "oklch(25% 0.008 285)", "oklch(35% 0.008 285)", "oklch(47% 0.008 285)", "oklch(59% 0.008 285)", "oklch(71% 0.008 285)", "oklch(83% 0.008 285)", "oklch(95% 0.008 285)"] },
+      "line": { "role": "neutral", "displayName": "Linha Técnica", "canonical": "#2d2e3b", "tonalRamp": ["oklch(15% 0.018 278)", "oklch(25% 0.018 278)", "oklch(35% 0.018 278)", "oklch(47% 0.018 278)", "oklch(59% 0.018 278)", "oklch(71% 0.018 278)", "oklch(83% 0.018 278)", "oklch(95% 0.018 278)"] },
+      "muted": { "role": "neutral", "displayName": "Cinza Informativo", "canonical": "#a7a8b3", "tonalRamp": ["oklch(15% 0.014 278)", "oklch(25% 0.014 278)", "oklch(35% 0.014 278)", "oklch(47% 0.014 278)", "oklch(59% 0.014 278)", "oklch(71% 0.014 278)", "oklch(83% 0.014 278)", "oklch(95% 0.014 278)"] },
+      "silver": { "role": "neutral", "displayName": "Prata Legível", "canonical": "#e2e8f0", "tonalRamp": ["oklch(15% 0.016 250)", "oklch(25% 0.016 250)", "oklch(35% 0.016 250)", "oklch(47% 0.016 250)", "oklch(59% 0.016 250)", "oklch(71% 0.016 250)", "oklch(83% 0.016 250)", "oklch(95% 0.016 250)"] },
+      "white": { "role": "neutral", "displayName": "Branco de Contraste", "canonical": "#ffffff", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(47% 0 0)", "oklch(59% 0 0)", "oklch(71% 0 0)", "oklch(83% 0 0)", "oklch(95% 0 0)"] },
+      "black": { "role": "neutral", "displayName": "Preto de Inversão", "canonical": "#000000", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(47% 0 0)", "oklch(59% 0 0)", "oklch(71% 0 0)", "oklch(83% 0 0)", "oklch(95% 0 0)"] },
+      "signal": { "role": "primary", "displayName": "Verde Sinal", "canonical": "#b8ff2c", "tonalRamp": ["oklch(15% 0.08 126)", "oklch(25% 0.11 126)", "oklch(35% 0.14 126)", "oklch(47% 0.17 126)", "oklch(59% 0.20 126)", "oklch(71% 0.22 126)", "oklch(83% 0.20 126)", "oklch(95% 0.08 126)"] },
+      "signal-ink": { "role": "neutral", "displayName": "Tinta do Sinal", "canonical": "#101600", "tonalRamp": ["oklch(15% 0.025 126)", "oklch(25% 0.035 126)", "oklch(35% 0.045 126)", "oklch(47% 0.055 126)", "oklch(59% 0.060 126)", "oklch(71% 0.055 126)", "oklch(83% 0.040 126)", "oklch(95% 0.020 126)"] },
+      "step": { "role": "neutral", "displayName": "Cinza de Etapa", "canonical": "#757789", "tonalRamp": ["oklch(15% 0.020 278)", "oklch(25% 0.020 278)", "oklch(35% 0.020 278)", "oklch(47% 0.020 278)", "oklch(59% 0.020 278)", "oklch(71% 0.020 278)", "oklch(83% 0.020 278)", "oklch(95% 0.020 278)"] },
+      "whatsapp": { "role": "secondary", "displayName": "Verde WhatsApp", "canonical": "#25d366", "tonalRamp": ["oklch(15% 0.06 145)", "oklch(25% 0.09 145)", "oklch(35% 0.12 145)", "oklch(47% 0.15 145)", "oklch(59% 0.18 145)", "oklch(71% 0.19 145)", "oklch(83% 0.14 145)", "oklch(95% 0.05 145)"] },
+      "whatsapp-hover": { "role": "secondary", "displayName": "Verde WhatsApp em Hover", "canonical": "#42e77e", "tonalRamp": ["oklch(15% 0.055 145)", "oklch(25% 0.085 145)", "oklch(35% 0.115 145)", "oklch(47% 0.145 145)", "oklch(59% 0.175 145)", "oklch(71% 0.185 145)", "oklch(83% 0.135 145)", "oklch(95% 0.050 145)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título principal do hero." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos grandes das seções institucionais." },
+      "title": { "displayName": "Title", "purpose": "Títulos de rota e mensagens de decisão." },
+      "body": { "displayName": "Body", "purpose": "Explicações, critérios e conteúdo corrente." },
+      "label": { "displayName": "Label", "purpose": "Status, horários e categorias compactas." }
+    },
+    "shadows": [
+      { "name": "whatsapp-float", "value": "0 14px 34px rgba(0, 0, 0, 0.45)", "purpose": "Separar o atalho fixo do WhatsApp do conteúdo em rolagem." },
+      { "name": "hero-signal-pulse", "value": "0 0 0 0.55rem rgba(255, 255, 255, 0)", "purpose": "Encerrar o pulso efêmero do indicador do hero." }
+    ],
+    "motion": [
+      { "name": "press", "value": "120ms ease-out", "purpose": "Resposta tátil por escala em botões e controles." },
+      { "name": "state", "value": "180ms ease", "purpose": "Mudanças de cor e borda em controles." },
+      { "name": "route-change", "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrada única e contida do painel da rota ativa." },
+      { "name": "image-reveal", "value": "600ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Ampliação discreta das fotografias no hover." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Neutralizar movimento quando prefers-reduced-motion estiver ativo." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Light CTA Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Ação principal de alto contraste usada no hero e no header.",
+      "html": "<button class=\"ds-btn-light\">FALAR COM NOSSA EQUIPE</button>",
+      "css": ".ds-btn-light{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;border:1px solid transparent;border-radius:0;background:var(--color-white,#fff);color:var(--color-black,#000);padding:0 1.4rem;font:700 .875rem/1.2 \"Barlow\",system-ui,sans-serif;transition:transform 120ms ease-out,background-color 180ms ease}.ds-btn-light:hover{background:var(--color-silver,#e2e8f0)}.ds-btn-light:active{transform:scale(.975)}.ds-btn-light:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Outline CTA Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ação secundária transparente, delimitada pela linha técnica.",
+      "html": "<button class=\"ds-btn-outline\">ACOMPANHAR NO INSTAGRAM</button>",
+      "css": ".ds-btn-outline{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;border:1px solid var(--color-line,#2d2e3b);border-radius:0;background:transparent;color:#fff;padding:0 1.4rem;font:700 .875rem/1.2 \"Barlow\",system-ui,sans-serif;transition:transform 120ms ease-out,background-color 180ms ease,border-color 180ms ease}.ds-btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06)}.ds-btn-outline:active{transform:scale(.975)}.ds-btn-outline:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Signal CTA Button",
+      "kind": "button",
+      "refersTo": "button-signal",
+      "description": "Ação contextual que conclui uma rota selecionada.",
+      "html": "<button class=\"ds-btn-signal\">QUERO AVALIAR MEU USADO</button>",
+      "css": ".ds-btn-signal{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;border:1px solid transparent;border-radius:0;background:var(--color-signal,#b8ff2c);color:var(--color-signal-ink,#101600);padding:0 1.4rem;font:700 .875rem/1.2 \"Barlow\",system-ui,sans-serif;transition:transform 120ms ease-out,background-color 180ms ease}.ds-btn-signal:hover{background:#fff}.ds-btn-signal:active{transform:scale(.975)}.ds-btn-signal:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Link compacto e neutro da navegação institucional.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">COMO FUNCIONA</a>",
+      "css": ".ds-nav-link{display:inline-flex;min-height:2.75rem;align-items:center;color:var(--color-muted,#a7a8b3);font:600 .78rem/1.2 \"Barlow\",system-ui,sans-serif;text-decoration:none;transition:color 180ms ease}.ds-nav-link:hover{color:#fff}.ds-nav-link:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Route Tab",
+      "kind": "custom",
+      "refersTo": "route-tab",
+      "description": "Opção inativa da Central de Próxima Jogada.",
+      "html": "<button class=\"ds-route-tab\" type=\"button\"><span>01</span><strong>TROCAR OU FAZER UPGRADE</strong></button>",
+      "css": ".ds-route-tab{display:grid;width:14rem;min-height:7.5rem;align-content:space-between;gap:1rem;border:1px solid var(--color-line,#2d2e3b);border-radius:0;background:transparent;padding:1rem;color:var(--color-muted,#a7a8b3);text-align:left;transition:background-color 180ms ease,color 180ms ease}.ds-route-tab strong{max-width:12rem;font:700 1.15rem/1.05 \"Barlow Condensed\",system-ui,sans-serif}.ds-route-tab span{font:700 .7rem/1.2 \"Barlow\",system-ui,sans-serif;letter-spacing:.12em}.ds-route-tab:focus-visible{outline:2px solid #fff;outline-offset:-4px}"
+    },
+    {
+      "name": "Active Route Tab",
+      "kind": "custom",
+      "refersTo": "route-tab-active",
+      "description": "Estado selecionado que usa o verde somente como sinal operacional.",
+      "html": "<button class=\"ds-route-tab-active\" type=\"button\" aria-selected=\"true\"><span>01</span><strong>TROCAR OU FAZER UPGRADE</strong></button>",
+      "css": ".ds-route-tab-active{display:grid;width:14rem;min-height:7.5rem;align-content:space-between;gap:1rem;border:1px solid var(--color-line,#2d2e3b);border-radius:0;background:var(--color-signal,#b8ff2c);padding:1rem;color:var(--color-signal-ink,#101600);text-align:left;transition:background-color 180ms ease,color 180ms ease}.ds-route-tab-active strong{max-width:12rem;font:700 1.15rem/1.05 \"Barlow Condensed\",system-ui,sans-serif}.ds-route-tab-active span{font:700 .7rem/1.2 \"Barlow\",system-ui,sans-serif;letter-spacing:.12em}.ds-route-tab-active:focus-visible{outline:2px solid #fff;outline-offset:-4px}"
+    },
+    {
+      "name": "Proof Item",
+      "kind": "custom",
+      "refersTo": "proof-item",
+      "description": "Fato oficial curto ligado aos demais por linhas técnicas.",
+      "html": "<div class=\"ds-proof-item\"><strong>13 ANOS</strong><span>atendendo apaixonados por games</span></div>",
+      "css": ".ds-proof-item{display:grid;gap:.25rem;border-block:1px solid var(--color-line,#2d2e3b);padding:1.25rem 0;background:transparent}.ds-proof-item strong{color:#fff;font:700 1.4rem/1 \"Barlow Condensed\",system-ui,sans-serif}.ds-proof-item span{color:var(--color-muted,#a7a8b3);font:400 .8rem/1.4 \"Barlow\",system-ui,sans-serif}"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "Pergunta expansível nativa, estruturada por divisores.",
+      "html": "<details class=\"ds-faq-item\"><summary>COMO FUNCIONA A AVALIAÇÃO PARA TROCA?<span class=\"ds-faq-plus\">+</span></summary><p>Você envia fotos, informações de uso e os itens inclusos.</p></details>",
+      "css": ".ds-faq-item{border-block:1px solid var(--color-line,#2d2e3b);color:#fff}.ds-faq-item summary{display:flex;min-height:5rem;cursor:pointer;list-style:none;align-items:center;justify-content:space-between;gap:1.5rem;font:700 1.5rem/1.1 \"Barlow Condensed\",system-ui,sans-serif}.ds-faq-item summary:focus-visible{outline:2px solid #fff;outline-offset:-2px}.ds-faq-plus{flex:none;color:var(--color-muted,#a7a8b3);font:300 1.875rem/1 \"Barlow\",system-ui,sans-serif;transition:transform 180ms ease}.ds-faq-item[open] .ds-faq-plus{transform:rotate(45deg)}.ds-faq-item p{max-width:40rem;margin:0;padding:0 2.5rem 1.75rem 0;color:var(--color-muted,#a7a8b3);font:400 .875rem/1.75 \"Barlow\",system-ui,sans-serif}"
+    },
+    {
+      "name": "WhatsApp Quick Action",
+      "kind": "button",
+      "refersTo": "whatsapp-action",
+      "description": "Atalho persistente e exclusivo para o canal oficial.",
+      "html": "<a class=\"ds-whatsapp-action\" href=\"#\" aria-label=\"Falar com a GAME ZER0 no WhatsApp\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z\"/><path d=\"M8.5 8.5c.5 3 2 4.5 5 5\"/></svg><span>FALAR AGORA</span></a>",
+      "css": ".ds-whatsapp-action{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;gap:.5rem;border:1px solid #b8f5ce;border-radius:0;background:var(--color-whatsapp,#25d366);padding:0 .8rem;color:#06180c;box-shadow:0 14px 34px rgba(0,0,0,.45);font:800 .8rem/1.2 \"Barlow\",system-ui,sans-serif;text-decoration:none;transition:background-color 180ms ease}.ds-whatsapp-action:hover{background:var(--color-whatsapp-hover,#42e77e)}.ds-whatsapp-action:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Central de Próxima Jogada",
+    "overview": "A GAME ZER0 apresenta um universo institucional gamer escuro, preciso e adulto. Preto profundo e grafites foscos formam o campo; branco e prata sustentam leitura e hierarquia; linhas técnicas organizam a informação; o verde-limão aparece como sinal operacional raro, nunca como decoração dominante. A fotografia real da loja e do acervo ancora a interface em evidência concreta.\n\nA experiência alterna grandes chamadas condensadas com blocos compactos e objetivos. O hero abre o mundo da marca; prova, processo, comunidade e canais oficiais conduzem a uma conversa humana. A Central de Próxima Jogada é o componente assinatura desta landing e não uma composição obrigatória para toda nova tela.",
+    "keyCharacteristics": [
+      "Contraste alto sobre preto e grafite, com profundidade construída por camadas tonais e linhas.",
+      "Tipografia condensada, robusta e curta para impacto; Barlow regular para explicação clara.",
+      "Geometria quadrada, compacta e técnica, sem cartões arredondados genéricos.",
+      "Verde-limão reservado para seleção, status e ação contextual; verde do WhatsApp reservado ao canal.",
+      "Fotografias oficiais da loja e do acervo usadas como prova, com crédito e origem preservados."
+    ],
+    "rules": [
+      { "name": "The Signal, Not Surface Rule", "body": "O verde-limão indica decisão ou estado operacional; não preenche seções inteiras nem substitui a hierarquia tipográfica.", "section": "colors" },
+      { "name": "The Channel Color Rule", "body": "O verde do WhatsApp não é cor geral da marca: ele identifica somente o acesso ao canal oficial.", "section": "colors" },
+      { "name": "The Condensed Hierarchy Rule", "body": "Barlow Condensed conduz títulos, números e links de alto impacto; parágrafos permanecem em Barlow para legibilidade.", "section": "typography" },
+      { "name": "The Short Headline Rule", "body": "A escala grande depende de frases curtas e diretas; não comprima parágrafos inteiros no estilo display.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "Superfícies em repouso são separadas por tom e borda. Sombra é exceção funcional, não acabamento universal.", "section": "elevation" },
+      { "name": "The Square Hardware Rule", "body": "Componentes devem parecer módulos de hardware: retos, encaixados e precisos. Evite pílulas e cartões excessivamente suaves.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use preto e grafite como campo dominante, com branco para hierarquia e linhas finas para estrutura.",
+      "Do reserve o verde-limão para seleção, status e ação contextual.",
+      "Do use Barlow Condensed em títulos curtos e Barlow em explicações e metadados.",
+      "Do mantenha cantos retos, alvos de toque confortáveis, foco visível e redução de movimento.",
+      "Do use somente fotografia real autorizada, com origem e vínculo para a publicação preservados."
+    ],
+    "donts": [
+      "Don't transforme o verde-limão em fundo decorativo amplo ou o verde do WhatsApp em cor geral da marca.",
+      "Don't arredonde cartões e botões para aproximar o sistema de uma interface SaaS genérica.",
+      "Don't substitua linhas e camadas tonais por sombras difusas em todos os componentes.",
+      "Don't promova a Central de Próxima Jogada a template obrigatório fora desta landing.",
+      "Don't invente estoque, preços, depoimentos ou imagens genéricas para preencher a composição."
+    ]
+  }
+}

@@ -3,18 +3,17 @@ import { Icon } from "./Icons";
 const reasons = [
   ["Atendimento por gamers", "Conversa prática, sem enrolação técnica e com repertório real de quem joga."],
   ["Transparência em cada avaliação", "Você entende os critérios, as condições e o valor antes de decidir."],
-  ["Originalidade e garantia", "Compromisso com procedência e garantia documentada em cada negociação."],
+  ["Procedência e condições claras", "Origem, estado e condições aplicáveis são informados antes de cada negociação."],
 ];
 
 export function WhyUs() {
   return (
-    <section className="section-shell bg-ink">
+    <section className="deferred-section section-shell bg-ink">
       <div className="relative overflow-hidden border border-line bg-white px-6 py-10 text-black sm:px-10 lg:px-14 lg:py-16">
         <div className="slash-mark" aria-hidden="true" />
         <div className="relative grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
-            <p className="text-xs font-bold tracking-[0.16em] text-zinc-600">POR QUE A GAME ZER0?</p>
-            <h2 className="mt-5 max-w-md font-display text-5xl font-black leading-[0.88] tracking-[-0.04em] sm:text-6xl">
+            <h2 className="max-w-md font-display text-5xl font-black leading-[0.9] tracking-[-0.03em] sm:text-6xl">
               Menos dúvida. Mais jogo.
             </h2>
           </div>

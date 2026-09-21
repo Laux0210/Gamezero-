@@ -4,7 +4,7 @@ import { Icon } from "./Icons";
 
 export function Footer() {
   return (
-    <footer id="contato" className="border-t border-line bg-panel">
+    <footer id="contato" className="deferred-section border-t border-line bg-panel">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
@@ -16,12 +16,15 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:justify-self-end">
             <div>
               <p className="text-xs font-bold tracking-[0.14em] text-muted">ATENDIMENTO</p>
-              <p className="mt-3 max-w-xs text-sm leading-6 text-silver">Horários, envio e retirada são confirmados diretamente com nossa equipe.</p>
+              <p className="mt-3 max-w-xs text-sm leading-6 text-silver">
+                Segunda a sexta, {CONTACT.hours.weekdays}.<br />
+                Sábado, {CONTACT.hours.saturday}.
+              </p>
             </div>
             <div>
               <p className="text-xs font-bold tracking-[0.14em] text-muted">CANAIS OFICIAIS</p>
               <div className="mt-3 flex flex-col items-start gap-2">
-                <a className="footer-link" href={CONTACT.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+                <a className="footer-link" href={CONTACT.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp {CONTACT.whatsappLabel}</a>
                 <a className="footer-link" href={CONTACT.instagramUrl} target="_blank" rel="noreferrer">{CONTACT.instagramHandle}</a>
               </div>
             </div>

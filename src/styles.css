@@ -4,11 +4,17 @@
   --color-ink: #08080a;
   --color-panel: #111116;
   --color-surface: #191920;
+  --color-card: #101015;
   --color-line: #2d2e3b;
   --color-muted: #a7a8b3;
   --color-silver: #e2e8f0;
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
+  --color-signal: #b8ff2c;
+  --color-signal-ink: #101600;
+  --color-step: #757789;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #42e77e;
+  --font-display: "Barlow Condensed", system-ui, sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
 }
 
 :root {
@@ -37,6 +43,24 @@ body {
   background: var(--color-ink);
   color: white;
   font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-signal-ink);
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--color-ink);
+  background: var(--color-line);
 }
 
 button,
@@ -100,6 +124,11 @@ button,
   border-color: var(--color-line);
   background: transparent;
   color: white;
+}
+
+.button-signal {
+  background: var(--color-signal);
+  color: var(--color-signal-ink);
 }
 
 .icon-button {
@@ -177,17 +206,13 @@ button,
   inset: -8%;
   width: 116%;
   height: 116%;
+  animation: field-drift 20s cubic-bezier(0.2, 0.8, 0.2, 1) infinite alternate;
 }
 
 .path-field-reverse {
   opacity: 0.6;
   transform: scaleX(-1) translateX(-2%);
-}
-
-.flow-path {
-  stroke-dasharray: 0.16 0.84;
-  stroke-dashoffset: 0;
-  animation: path-flow var(--path-duration) linear var(--path-delay) infinite;
+  animation-direction: alternate-reverse;
 }
 
 .hero-eyebrow {
@@ -263,6 +288,200 @@ button,
   content: "";
 }
 
+.brand-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-line);
+  object-fit: cover;
+}
+
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+
+.next-move {
+  background: var(--color-ink);
+}
+
+.proof-rail {
+  display: grid;
+  border-block: 1px solid var(--color-line);
+}
+
+.proof-item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.25rem 0;
+}
+
+.proof-item + .proof-item {
+  border-top: 1px solid var(--color-line);
+}
+
+.proof-item strong {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.proof-item span {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.next-move-heading {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.next-move-heading h2 {
+  max-width: 46rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+}
+
+.next-move-heading p {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.move-console {
+  display: grid;
+  margin-top: 3.5rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel);
+}
+
+.move-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--color-line);
+}
+
+.move-tab {
+  display: grid;
+  min-height: 7.5rem;
+  align-content: space-between;
+  gap: 1rem;
+  border: 0;
+  border-right: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  background: transparent;
+  padding: 1rem;
+  color: var(--color-muted);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.move-tab:nth-child(even) {
+  border-right: 0;
+}
+
+.move-tab:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.move-tab[aria-selected="true"] {
+  background: var(--color-signal);
+  color: var(--color-signal-ink);
+}
+
+.move-tab:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid white;
+  outline-offset: -4px;
+}
+
+.move-tab span {
+  max-width: 12rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.move-panel {
+  min-height: 27rem;
+  padding: 2rem 1.25rem;
+  animation: route-change 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.move-panel-status {
+  color: var(--color-signal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.move-panel h3 {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+.move-panel p {
+  max-width: 40rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.move-panel .button {
+  margin-top: 2rem;
+}
+
+.move-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1rem;
+  align-content: end;
+  border-top: 1px solid var(--color-line);
+  padding: 1.5rem 1.25rem;
+}
+
+.move-hours > span {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.move-hours strong,
+.move-hours p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.move-hours p {
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.process-number {
+  color: var(--color-step);
+}
+
 .expertise-card {
   min-height: 25rem;
   border-right: 1px solid var(--color-line);
@@ -282,50 +501,52 @@ button,
   background: rgba(0, 0, 0, 0.06);
 }
 
-.social-card {
+.community-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.community-post {
   position: relative;
-  min-height: 27rem;
+  min-height: 21rem;
   overflow: hidden;
   border: 1px solid var(--color-line);
-  background: #101015;
+  background: var(--color-card);
+  color: white;
+  display: block;
+}
+
+.community-post img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.community-post-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 40%;
   padding: 1.25rem;
+  background: linear-gradient(transparent, rgba(8, 8, 10, 0.96));
 }
 
-.social-card::before {
-  position: absolute;
-  content: "";
-  inset: auto -22% -17% 18%;
-  aspect-ratio: 1;
-  border: 4.5rem solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
+.community-post-overlay > span {
+  max-width: 23rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.social-card-2::before {
-  inset: 25% 18% auto -35%;
-  border-radius: 0;
-  transform: rotate(28deg);
-}
-
-.social-card-3::before {
-  inset: auto -30% -38% 10%;
-  border-width: 2px;
-  box-shadow: 0 0 70px 12px rgba(255, 255, 255, 0.12);
-}
-
-.social-card-4::before {
-  inset: 20% -10% auto 20%;
-  border: none;
-  border-radius: 0;
-  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0 2px, transparent 2px 14px);
-  transform: rotate(-12deg);
-}
-
-.social-card-grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
+.community-post:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
 }
 
 .faq-item[open] .faq-plus {
@@ -360,7 +581,7 @@ button,
   justify-content: center;
   gap: 0.5rem;
   border: 1px solid #b8f5ce;
-  background: #25d366;
+  background: var(--color-whatsapp);
   padding-inline: 0.8rem;
   color: #06180c;
   font-size: 0.8rem;
@@ -380,9 +601,22 @@ button,
   }
 }
 
-@keyframes path-flow {
+@keyframes field-drift {
   to {
-    stroke-dashoffset: -1;
+    translate: 1.75% -1.25%;
+  }
+}
+
+@keyframes route-change {
+  from {
+    opacity: 0.55;
+    filter: blur(7px);
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
@@ -396,6 +630,10 @@ button,
 @media (hover: hover) and (pointer: fine) {
   .button-light:hover {
     background: var(--color-silver);
+  }
+
+  .button-signal:hover {
+    background: white;
   }
 
   .button-outline:hover,
@@ -412,12 +650,17 @@ button,
     background: var(--color-surface);
   }
 
+  .community-post:hover img {
+    transform: scale(1.035);
+    filter: contrast(1.05);
+  }
+
   .footer-link:hover {
     text-decoration-color: white;
   }
 
   .whatsapp-fab:hover {
-    background: #42e77e;
+    background: var(--color-whatsapp-hover);
   }
 }
 
@@ -431,6 +674,38 @@ button,
   .section-shell {
     padding: 7rem 2rem;
   }
+
+  .proof-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .proof-item {
+    padding: 1.4rem;
+  }
+
+  .proof-item + .proof-item {
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+
+  .next-move-heading {
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: end;
+  }
+
+  .move-panel,
+  .move-hours {
+    padding-inline: 2rem;
+  }
+
+  .community-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(18rem, 30vw));
+  }
+
+  .community-post-featured {
+    grid-row: 1 / 3;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -440,6 +715,49 @@ button,
 
   .section-shell {
     padding: 8rem 3rem;
+  }
+
+  .move-console {
+    grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.65fr) minmax(12rem, 0.63fr);
+  }
+
+  .move-tabs {
+    grid-template-columns: 1fr;
+    border-right: 1px solid var(--color-line);
+    border-bottom: 0;
+  }
+
+  .move-tab,
+  .move-tab:nth-child(even),
+  .move-tab:nth-last-child(-n + 2) {
+    min-height: 7rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .move-tab:last-child {
+    border-bottom: 0;
+  }
+
+  .move-panel {
+    padding: 3rem;
+  }
+
+  .move-hours {
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+    padding: 2rem;
+  }
+
+  .community-grid {
+    grid-template-columns: 1.3fr 0.7fr 0.9fr;
+    grid-template-rows: minmax(27rem, 38vw);
+  }
+
+  .community-post-featured,
+  .community-post-tall,
+  .community-post-wide {
+    grid-row: auto;
   }
 
   .stage-card {
@@ -462,7 +780,7 @@ button,
     transition-duration: 0.01ms !important;
   }
 
-  .flow-path {
-    stroke-dasharray: none;
+  .path-field {
+    animation: none;
   }
 }

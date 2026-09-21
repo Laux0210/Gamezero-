@@ -1,0 +1,80 @@
+{
+  "title": "Escolha a arquitetura da nova Game Zero",
+  "question": "O hero e o universo visual serão preservados. Escolha como o restante da página deve conduzir o visitante até o atendimento.",
+  "options": [
+    {
+      "id": "service-desk",
+      "label": "Central de Próxima Jogada",
+      "kicker": "THE ROLL",
+      "lineage": "balcão de diagnóstico gamer",
+      "thesis": "A página começa pela intenção do jogador e transforma cada necessidade em uma rota clara de atendimento.",
+      "palette": ["#08080a", "#16161d", "#ffffff", "#a8ff3e"],
+      "materials": ["grafite fosco", "linhas técnicas", "vidro escuro"],
+      "viewport": "Após o hero preservado, quatro rotas — trocar, encomendar, montar e resolver — abrem processo, provas reais e contato.",
+      "risk": "Exige textos muito objetivos para não parecer um formulário técnico.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 14,
+        "regions": [
+          {"label": "hero preservado", "x": 0, "y": 0, "w": 12, "h": 4, "accent": true},
+          {"label": "4 rotas", "x": 0, "y": 4, "w": 12, "h": 3},
+          {"label": "processo", "x": 0, "y": 7, "w": 7, "h": 3},
+          {"label": "13 anos", "x": 7, "y": 7, "w": 5, "h": 3},
+          {"label": "provas + contato", "x": 0, "y": 10, "w": 12, "h": 4}
+        ]
+      }
+    },
+    {
+      "id": "community-editorial",
+      "label": "Comunidade em Primeiro Plano",
+      "lineage": "editorial social gamer",
+      "thesis": "Publicações reais e treze anos de presença dão o ritmo, enquanto os serviços aparecem dentro da história da marca.",
+      "palette": ["#08080a", "#16161d", "#ffffff", "#a8ff3e"],
+      "materials": ["mosaico social", "recortes de tela", "metal escuro"],
+      "viewport": "Após o hero, um mural editorial de posts públicos apresenta comunidade, especialidades, processo e atendimento.",
+      "risk": "Depende de uma curadoria forte para não parecer apenas um feed do Instagram.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 14,
+        "regions": [
+          {"label": "hero preservado", "x": 0, "y": 0, "w": 12, "h": 4, "accent": true},
+          {"label": "mural social", "x": 0, "y": 4, "w": 8, "h": 5},
+          {"label": "13 anos", "x": 8, "y": 4, "w": 4, "h": 3},
+          {"label": "serviços", "x": 8, "y": 7, "w": 4, "h": 2},
+          {"label": "processo", "x": 0, "y": 9, "w": 12, "h": 2},
+          {"label": "faq + contato", "x": 0, "y": 11, "w": 12, "h": 3}
+        ]
+      }
+    },
+    {
+      "id": "upgrade-path",
+      "label": "Jornada de Upgrade",
+      "lineage": "progressão de campanha",
+      "thesis": "A narrativa acompanha o jogador do equipamento atual à próxima experiência, com transparência em cada etapa.",
+      "palette": ["#08080a", "#16161d", "#ffffff", "#a8ff3e"],
+      "materials": ["trilhas de progresso", "placas modulares", "luz de status"],
+      "viewport": "Depois do hero, uma trilha visual conecta avaliação, consultoria, negociação e entrega com provas da comunidade.",
+      "risk": "A metáfora de progressão precisa permanecer adulta e institucional.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 14,
+        "regions": [
+          {"label": "hero preservado", "x": 0, "y": 0, "w": 12, "h": 4, "accent": true},
+          {"label": "estado atual", "x": 0, "y": 4, "w": 4, "h": 3},
+          {"label": "consultoria", "x": 4, "y": 4, "w": 4, "h": 3},
+          {"label": "próximo nível", "x": 8, "y": 4, "w": 4, "h": 3},
+          {"label": "provas reais", "x": 0, "y": 7, "w": 12, "h": 4},
+          {"label": "faq + contato", "x": 0, "y": 11, "w": 12, "h": 3}
+        ]
+      }
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "steer": true
+}

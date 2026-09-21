@@ -4,7 +4,7 @@ import { Icon } from "./Icons";
 
 const trust = [
   "Atendimento especializado",
-  "Procedência e garantia",
+  "Procedência e condições claras",
   "Avaliação justa em upgrades",
 ];
 
@@ -21,7 +21,7 @@ export function Hero() {
             Consultoria gamer, trocas e encomendas
           </div>
 
-          <h1 className="mt-8 max-w-6xl font-display text-[clamp(3.55rem,8.2vw,8rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-balance text-white">
+          <h1 className="mt-8 max-w-6xl font-display text-[clamp(3.5rem,7.4vw,6rem)] font-bold leading-[0.9] tracking-[-0.035em] text-balance text-white">
             <span className="hero-title-line hero-title-line-first">O ponto zero da sua</span>{" "}
             <span className="hero-title-line hero-title-line-second">experiência gamer.</span>
           </h1>

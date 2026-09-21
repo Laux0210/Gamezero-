@@ -1,4 +1,4 @@
-const PATH_COUNT = 24;
+const PATH_COUNT = 10;
 
 function PathField({ direction }) {
   const paths = Array.from({ length: PATH_COUNT }, (_, index) => {
@@ -13,8 +13,6 @@ function PathField({ direction }) {
       d: `M ${startX} ${startY} C ${360 + direction * offset} ${80 + offset * 0.22}, ${980 - direction * offset} ${560 - offset * 0.18}, ${endX} ${endY}`,
       opacity: 0.055 + index * 0.0045,
       width: 0.55 + index * 0.035,
-      duration: 20 + index * 0.55,
-      delay: -(index * 0.8),
     };
   });
 
@@ -29,16 +27,10 @@ function PathField({ direction }) {
       {paths.map((path) => (
         <path
           key={path.id}
-          className="flow-path"
           d={path.d}
-          pathLength="1"
           stroke="currentColor"
           strokeWidth={path.width}
           strokeOpacity={path.opacity}
-          style={{
-            "--path-duration": `${path.duration}s`,
-            "--path-delay": `${path.delay}s`,
-          }}
         />
       ))}
     </svg>

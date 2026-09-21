@@ -1,13 +1,21 @@
 const defaultMessage =
   "Olá! Vim pelo site da Game Zero e gostaria de tirar uma dúvida.";
 
-const whatsappNumber = (import.meta.env.VITE_WHATSAPP_NUMBER ?? "").replace(
-  /\D/g,
-  "",
-);
+const fallbackWhatsAppNumber = "5551996159863";
+const configuredNumber = (import.meta.env.VITE_WHATSAPP_NUMBER ?? "").replace(/\D/g, "");
+const whatsappNumber = configuredNumber || fallbackWhatsAppNumber;
+
+export function createWhatsAppUrl(message = defaultMessage) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
 export const CONTACT = {
   instagramHandle: "@lojagamezero",
   instagramUrl: "https://www.instagram.com/lojagamezero/",
-  whatsappUrl: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`,
+  whatsappLabel: "(51) 99615-9863",
+  whatsappUrl: createWhatsAppUrl(),
+  hours: {
+    weekdays: "10h30 às 18h",
+    saturday: "10h30 às 17h",
+  },
 };
