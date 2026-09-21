@@ -165,18 +165,18 @@ export function HeroSection() {
             href={CONTACT.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black hover:bg-neutral-200 px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm active:scale-[0.98]"
           >
             <span>Falar com nossa equipe</span>
-            <ArrowUpRight className="h-4 w-4 text-black" />
+            <ArrowUpRight className="h-4 w-4 text-zinc-400" />
           </a>
           <a
             href={CONTACT.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 hover:bg-white/10 text-white px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 hover:border-white/20 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 active:scale-[0.98]"
           >
-            <Icon name="instagram" className="h-4 w-4" />
+            <Icon name="instagram" className="h-4 w-4 text-zinc-400" />
             <span>@lojagamezero</span>
           </a>
         </div>

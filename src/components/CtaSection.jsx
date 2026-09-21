@@ -99,11 +99,11 @@ export function CtaSection() {
             href={CONTACT.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded-full shadow-[0px_0px_0px_4px_rgba(255,255,255,0.15)] hover:bg-neutral-200 transition-all duration-200 hover:scale-105"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 rounded-xl text-sm font-medium transition-all duration-200 shadow-md active:scale-[0.98]"
           >
-            <MessageCircle className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4 text-zinc-400" />
             <span>Falar com a equipe no WhatsApp</span>
-            <ArrowUpRight className="h-4 w-4" />
+            <ArrowUpRight className="h-4 w-4 text-zinc-400" />
           </a>
         </div>
       </div>

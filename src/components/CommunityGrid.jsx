@@ -69,11 +69,11 @@ export function CommunityGrid() {
           href={CONTACT.instagramUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white transition shrink-0"
+          className="inline-flex items-center gap-2 bg-[#16171a] hover:bg-[#22242a] border border-white/15 hover:border-white/25 px-5 py-2.5 rounded-xl text-sm font-medium text-white transition-all shadow-sm shrink-0 active:scale-[0.98]"
         >
-          <Icon name="instagram" className="h-4 w-4" />
+          <Icon name="instagram" className="h-4 w-4 text-zinc-400" />
           <span>Seguir no Instagram</span>
-          <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground" />
+          <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
         </a>
       </div>
 

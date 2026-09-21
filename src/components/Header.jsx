@@ -98,7 +98,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram @lojagamezero"
-            className="hidden sm:inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 text-muted-foreground hover:text-white hover:border-white/25 transition-colors"
+            className="hidden sm:inline-flex items-center justify-center h-9 w-9 rounded-xl border border-white/10 bg-[#16171a] text-muted-foreground hover:text-white hover:border-white/25 transition-colors shadow-sm"
           >
             <Icon name="instagram" className="h-4 w-4" />
           </a>
@@ -107,10 +107,10 @@ export function Header() {
             href={CONTACT.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 bg-white text-black hover:bg-neutral-200 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-sm"
+            className="hidden sm:inline-flex items-center gap-2 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm active:scale-[0.98]"
           >
             <span>Falar no WhatsApp</span>
-            <ArrowUpRight className="h-3.5 w-3.5 text-black" />
+            <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
           </a>
 
           {/* Mobile Menu Button */}
@@ -161,16 +161,16 @@ export function Header() {
                 href={CONTACT.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 bg-white text-black font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg"
+                className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 rounded-xl font-medium text-sm transition-all shadow-sm"
               >
                 <span>Falar no WhatsApp</span>
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4 text-zinc-400" />
               </a>
               <a
                 href={CONTACT.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 border border-line text-silver hover:text-white font-medium text-sm rounded-xl"
+                className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 rounded-xl font-medium text-sm transition-all"
               >
                 <Icon name="instagram" className="h-4 w-4" />
                 <span>Acompanhar @lojagamezero</span>

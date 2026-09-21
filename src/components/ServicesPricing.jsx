@@ -116,15 +116,11 @@ export function ServicesPricing() {
                 href={createWhatsAppUrl(svc.message)}
                 target="_blank"
                 rel="noreferrer"
-                className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-md ${
-                  svc.popular
-                    ? "bg-white text-black hover:bg-neutral-200"
-                    : "bg-surface text-white hover:bg-white/15 border border-white/15"
-                }`}
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 shadow-sm bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 active:scale-[0.98]"
               >
-                <MessageCircle className="h-4 w-4" />
+                <MessageCircle className="h-4 w-4 text-zinc-400" />
                 <span>{svc.buttonText}</span>
-                <ArrowUpRight className="h-3.5 w-3.5" />
+                <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
               </a>
             </div>
           </div>

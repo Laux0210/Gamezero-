@@ -19,7 +19,7 @@ export function FooterSection() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="h-8 w-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-muted-foreground hover:text-white hover:border-white/25 transition"
+              className="h-9 w-9 rounded-xl border border-white/10 bg-[#16171a] flex items-center justify-center text-muted-foreground hover:text-white hover:border-white/25 transition shadow-sm"
             >
               <Icon name="instagram" className="h-4 w-4" />
             </a>
@@ -28,7 +28,7 @@ export function FooterSection() {
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp"
-              className="h-8 w-8 rounded-full border border-whatsapp/30 bg-whatsapp/10 flex items-center justify-center text-whatsapp hover:bg-whatsapp hover:text-black transition"
+              className="h-9 w-9 rounded-xl border border-white/10 bg-[#16171a] flex items-center justify-center text-muted-foreground hover:text-white hover:border-white/25 transition shadow-sm"
             >
               <Icon name="whatsapp" className="h-4 w-4" />
             </a>
@@ -98,11 +98,11 @@ export function FooterSection() {
         href={CONTACT.whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 px-4 py-3 bg-whatsapp text-black hover:bg-whatsapp-hover rounded-full shadow-2xl transition-all duration-200 hover:scale-105 font-bold text-xs uppercase tracking-wider"
+        className="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 px-4 py-3 bg-[#16171a] hover:bg-[#22242a] text-white border border-white/15 hover:border-white/25 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 font-medium text-sm"
         aria-label="Falar com a GAME ZER0 no WhatsApp"
       >
-        <Icon name="whatsapp" className="h-5 w-5 text-black" />
-        <span className="hidden sm:inline">Falar agora</span>
+        <Icon name="whatsapp" className="h-5 w-5 text-whatsapp" />
+        <span className="hidden sm:inline">Falar no WhatsApp</span>
       </a>
     </footer>
   );
