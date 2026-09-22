@@ -43,8 +43,6 @@ export function FooterSection() {
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li><a href="#inicio" className="hover:text-white transition">Início</a></li>
               <li><a href="#geracoes" className="hover:text-white transition">Gerações</a></li>
-              <li><a href="#atendimento" className="hover:text-white transition">Sua Jogada</a></li>
-              <li><a href="#como-funciona" className="hover:text-white transition">Como Funciona</a></li>
               <li><a href="#comunidade" className="hover:text-white transition">Comunidade</a></li>
               <li><a href="#faq" className="hover:text-white transition">FAQ</a></li>
             </ul>

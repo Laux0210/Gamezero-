@@ -7,8 +7,6 @@ import { Icon } from "./Icons";
 const navItems = [
   { name: "Início", href: "#inicio" },
   { name: "Gerações", href: "#geracoes" },
-  { name: "Sua Jogada", href: "#atendimento" },
-  { name: "Como Funciona", href: "#como-funciona" },
   { name: "Comunidade", href: "#comunidade" },
   { name: "FAQ", href: "#faq" },
 ];

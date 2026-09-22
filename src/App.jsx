@@ -3,9 +3,6 @@ import { Header } from "./components/Header";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { HeroSection } from "./components/HeroSection";
 import { PlatformsProof } from "./components/PlatformsProof";
-import { BentoSection } from "./components/BentoSection";
-import { LargeQuote } from "./components/LargeQuote";
-import { ServicesPricing } from "./components/ServicesPricing";
 import { CommunityGrid } from "./components/CommunityGrid";
 import { FaqSection } from "./components/FaqSection";
 import { CtaSection } from "./components/CtaSection";
@@ -31,21 +28,6 @@ export default function App() {
         {/* Platforms / Multigeneration Proof */}
         <AnimatedSection className="relative z-10 w-full mt-2 md:mt-4" delay={0.1}>
           <PlatformsProof />
-        </AnimatedSection>
-
-        {/* Bento Grid: 6 Unique Gamer Offerings */}
-        <AnimatedSection className="relative z-10 w-full mt-4 md:mt-8" delay={0.15}>
-          <BentoSection />
-        </AnimatedSection>
-
-        {/* Large Statement Manifesto Quote */}
-        <AnimatedSection className="relative z-10 w-full mt-4 md:mt-8" delay={0.15}>
-          <LargeQuote />
-        </AnimatedSection>
-
-        {/* Services & Next Move Cards */}
-        <AnimatedSection className="relative z-10 w-full mt-6 md:mt-10" delay={0.15}>
-          <ServicesPricing />
         </AnimatedSection>
 
         {/* Community, Storefront & Real Instagram Feed Grid */}

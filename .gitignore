@@ -9,3 +9,4 @@ dist
 bot/auth_info_baileys/
 bot/node_modules/
 bot/sessions.json
+.codex/
