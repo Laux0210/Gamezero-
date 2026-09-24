@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { CONTACT, createWhatsAppUrl } from "../config/contact";
 import { Icon } from "./Icons";
-import { X, Send, ArrowUpRight, CheckCheck, MessageSquare, Sparkles } from "lucide-react";
+import { X, Send, ArrowUpRight, CheckCheck } from "lucide-react";
 import { getAssetUrl } from "../utils/assets";
 
 const INITIAL_MESSAGES = [
@@ -9,7 +9,7 @@ const INITIAL_MESSAGES = [
     id: 1,
     sender: "bot",
     time: "agora",
-    text: "Fala, gamer! 🎮 Bem-vindo à GAME ZER0. Atendemos de PS1 a PS5, Xbox e Nintendo há mais de 13 anos.",
+    text: "Fala, gamer! Bem-vindo à GAME ZER0. Atendemos de PS1 a PS5, Xbox e Nintendo há mais de 13 anos.",
   },
   {
     id: 2,
@@ -17,11 +17,11 @@ const INITIAL_MESSAGES = [
     time: "agora",
     text: "Como podemos acelerar sua próxima jogada hoje?",
     options: [
-      { id: "troca", label: "🔄 Avaliar meu console pra troca", reply: "Quero avaliar meu console usado para fazer upgrade." },
-      { id: "consoles", label: "🕹️ Ver consoles e acervo", reply: "Gostaria de saber quais consoles vocês têm disponíveis hoje." },
-      { id: "setup", label: "⚡ Encomendas & Jogos", reply: "Busco um console ou jogo específico sob encomenda." },
-      { id: "horarios", label: "📍 Horário e Loja Física", reply: "Qual o horário de funcionamento e endereço da loja?" },
-      { id: "humano", label: "👤 Falar com atendente humano", reply: "Gostaria de falar direto com um atendente no WhatsApp." },
+      { id: "troca", label: "Avaliar meu console pra troca", reply: "Quero avaliar meu console usado para fazer upgrade." },
+      { id: "consoles", label: "Ver consoles e acervo", reply: "Gostaria de saber quais consoles vocês têm disponíveis hoje." },
+      { id: "setup", label: "Encomendas e jogos", reply: "Busco um console ou jogo específico sob encomenda." },
+      { id: "horarios", label: "Horário e loja física", reply: "Qual o horário de funcionamento e endereço da loja?" },
+      { id: "humano", label: "Falar com atendente humano", reply: "Gostaria de falar direto com um atendente no WhatsApp." },
     ],
   },
 ];
