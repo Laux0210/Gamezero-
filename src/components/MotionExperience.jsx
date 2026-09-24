@@ -16,21 +16,21 @@ const collections = [
     title: "PlayStation",
     range: "Do clássico ao atual",
     copy: "Consoles, controles, jogos e acessórios para quem começou no PS2 ou já está mirando o PS5.",
-    image: getAssetUrl("/instagram/playstation-wall.jpg"),
+    image: getAssetUrl("/instagram/playstation-console-black.png"),
   },
   {
     id: "xbox",
     title: "Xbox",
     range: "Potência e retrocompatibilidade",
     copy: "Modelos e jogos para construir uma biblioteca que atravessa gerações sem perder ritmo.",
-    image: getAssetUrl("/instagram/xbox-series-x.jpg"),
+    image: getAssetUrl("/instagram/xbox-series-x-black.png"),
   },
   {
     id: "nintendo",
     title: "Nintendo",
     range: "Jogar de outro jeito",
     copy: "Portáteis, consoles e títulos que colocam descoberta, coleção e diversão no centro.",
-    image: getAssetUrl("/instagram/nintendo-switch.jpg"),
+    image: getAssetUrl("/instagram/nintendo-switch-black.png"),
   },
 ];
 
@@ -141,7 +141,6 @@ export function MotionExperience() {
                 onFocus={() => setActiveCollection(collection.id)}
               >
                 <img
-                  className="transition-transform duration-700 ease-out group-hover:scale-105"
                   src={collection.image}
                   alt=""
                 />

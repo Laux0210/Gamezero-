@@ -127,8 +127,9 @@ export function HeroSection() {
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const canvasRatio = width / height;
 
-    // On mobile screens, fit nicely; on desktop, leave comfortable breathing room
-    const paddingFactor = width < 768 ? 0.96 : 0.88;
+    // Keep the product centered on mobile and make the desktop sequence larger.
+    const isMobile = window.innerWidth < 900;
+    const paddingFactor = isMobile ? 0.96 : 1.18;
     let dw, dh;
 
     if (canvasRatio > imgRatio) {
@@ -139,10 +140,21 @@ export function HeroSection() {
       dh = dw / imgRatio;
     }
 
-    const dx = (width - dw) / 2;
+    const dx = (width - dw) / 2 + (isMobile ? 0 : width * 0.15);
     const dy = (height - dh) / 2;
 
     ctx.drawImage(img, dx, dy, dw, dh);
+
+    // Feather the frame itself so its studio backdrop dissolves into the hero.
+    ctx.globalCompositeOperation = "destination-in";
+    const frameMask = ctx.createLinearGradient(dx, 0, dx + dw, 0);
+    frameMask.addColorStop(0, "rgba(0, 0, 0, 0)");
+    frameMask.addColorStop(0.16, "rgba(0, 0, 0, 1)");
+    frameMask.addColorStop(0.84, "rgba(0, 0, 0, 1)");
+    frameMask.addColorStop(1, "rgba(0, 0, 0, 0)");
+    ctx.fillStyle = frameMask;
+    ctx.fillRect(dx, dy, dw, dh);
+    ctx.globalCompositeOperation = "source-over";
     ctx.restore();
   };
 
@@ -169,7 +181,7 @@ export function HeroSection() {
         end: "+=180%",
         pin: hero,
         anticipatePin: 1,
-        scrub: 0.15,
+        scrub: 0.45,
         onUpdate: (self) => {
           const progress = self.progress;
 
@@ -210,7 +222,8 @@ export function HeroSection() {
             if (progress < 0.15) {
               hudTextRef.current.textContent = "Console Montado";
             } else if (progress < 0.85) {
-              hudTextRef.current.textContent = `Desmontando • ${Math.round(progress * 100)}%`;
+              const action = self.direction < 0 ? "Montando" : "Desmontando";
+              hudTextRef.current.textContent = `${action} • ${Math.round(progress * 100)}%`;
             } else {
               hudTextRef.current.textContent = "Arquitetura Desmontada";
             }
