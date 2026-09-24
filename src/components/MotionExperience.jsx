@@ -23,14 +23,14 @@ const collections = [
     title: "Xbox",
     range: "Potência e retrocompatibilidade",
     copy: "Modelos e jogos para construir uma biblioteca que atravessa gerações sem perder ritmo.",
-    image: "https://picsum.photos/seed/gamezero-xbox-console/1600/1000",
+    image: getAssetUrl("/instagram/xbox-series-x.jpg"),
   },
   {
     id: "nintendo",
     title: "Nintendo",
     range: "Jogar de outro jeito",
     copy: "Portáteis, consoles e títulos que colocam descoberta, coleção e diversão no centro.",
-    image: "https://picsum.photos/seed/gamezero-nintendo-play/1600/1000",
+    image: getAssetUrl("/instagram/nintendo-switch.jpg"),
   },
 ];
 
