@@ -124,37 +124,24 @@ export function HeroSection() {
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, width, height);
 
-    const imgRatio = img.naturalWidth / img.naturalHeight;
-    const canvasRatio = width / height;
+    // Crop each portrait frame as a full-bleed background without distorting it.
+    const coverScale = Math.max(width / img.naturalWidth, height / img.naturalHeight);
+    const sourceWidth = width / coverScale;
+    const sourceHeight = height / coverScale;
+    const sourceX = (img.naturalWidth - sourceWidth) / 2;
+    const sourceY = (img.naturalHeight - sourceHeight) / 2;
 
-    // Keep the product centered on mobile and make the desktop sequence larger.
-    const isMobile = window.innerWidth < 900;
-    const paddingFactor = isMobile ? 0.96 : 1.18;
-    let dw, dh;
-
-    if (canvasRatio > imgRatio) {
-      dh = height * paddingFactor;
-      dw = dh * imgRatio;
-    } else {
-      dw = width * paddingFactor;
-      dh = dw / imgRatio;
-    }
-
-    const dx = (width - dw) / 2 + (isMobile ? 0 : width * 0.15);
-    const dy = (height - dh) / 2;
-
-    ctx.drawImage(img, dx, dy, dw, dh);
-
-    // Feather the frame itself so its studio backdrop dissolves into the hero.
-    ctx.globalCompositeOperation = "destination-in";
-    const frameMask = ctx.createLinearGradient(dx, 0, dx + dw, 0);
-    frameMask.addColorStop(0, "rgba(0, 0, 0, 0)");
-    frameMask.addColorStop(0.16, "rgba(0, 0, 0, 1)");
-    frameMask.addColorStop(0.84, "rgba(0, 0, 0, 1)");
-    frameMask.addColorStop(1, "rgba(0, 0, 0, 0)");
-    ctx.fillStyle = frameMask;
-    ctx.fillRect(dx, dy, dw, dh);
-    ctx.globalCompositeOperation = "source-over";
+    ctx.drawImage(
+      img,
+      sourceX,
+      sourceY,
+      sourceWidth,
+      sourceHeight,
+      0,
+      0,
+      width,
+      height,
+    );
     ctx.restore();
   };
 
