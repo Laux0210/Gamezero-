@@ -140,7 +140,7 @@ export function HeroSection() {
       dh = dw / imgRatio;
     }
 
-    const dx = (width - dw) / 2 + (isMobile ? 0 : width * 0.15);
+    const dx = (width - dw) / 2 + (isMobile ? 0 : width * 0.18);
     const dy = (height - dh) / 2;
 
     ctx.drawImage(img, dx, dy, dw, dh);
