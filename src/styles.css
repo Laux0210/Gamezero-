@@ -230,15 +230,16 @@ img {
 .hero-scroll-wrap {
   position: relative;
   width: 100%;
+  margin-top: 6rem;
 }
 
 .hero-section {
   position: relative;
   display: flex;
   width: min(calc(100% - 1.5rem), 96rem);
-  height: calc(100svh - 1.5rem);
-  min-height: calc(100svh - 1.5rem);
-  margin: 0.75rem auto 0;
+  height: calc(100svh - 7rem);
+  min-height: calc(100svh - 7rem);
+  margin: 0 auto;
   overflow: hidden;
   border: 0;
   border-radius: 2rem;
@@ -1248,6 +1249,10 @@ img {
 }
 
 @media (max-width: 600px) {
+  .hero-scroll-wrap {
+    margin-top: 5.5rem;
+  }
+
   .brand-mark img {
     width: 2.25rem;
     height: 2.25rem;
@@ -1261,8 +1266,9 @@ img {
   }
 
   .hero-section {
-    min-height: 94svh;
-    margin-top: 0.38rem;
+    height: calc(100svh - 6rem);
+    min-height: calc(100svh - 6rem);
+    margin-top: 0;
   }
 
   .hero-content--initial {
