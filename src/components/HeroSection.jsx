@@ -244,7 +244,7 @@ export function HeroSection() {
         {/* Ambient glow matching PS5 LEDs */}
         <div className="hero-ambient-glow" aria-hidden="true" />
 
-        {/* Canvas animation layer */}
+        {/* Full-bleed animated background */}
         <div className="hero-canvas-wrap">
           <canvas
             ref={canvasRef}

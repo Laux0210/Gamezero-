@@ -250,7 +250,7 @@ img {
 
 .hero-canvas-wrap {
   position: absolute;
-  inset: 0 0 0 40%;
+  inset: 0;
   z-index: 1;
   display: flex;
   align-items: center;
