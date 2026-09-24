@@ -287,7 +287,6 @@ img {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, var(--ink) 0%, var(--ink) 55%, rgba(5, 5, 5, 0.88) 59%, rgba(5, 5, 5, 0.42) 65%, rgba(5, 5, 5, 0.08) 71%, transparent 75%, transparent 92%, rgba(5, 5, 5, 0.28) 98%, rgba(5, 5, 5, 0.45) 100%),
     radial-gradient(ellipse at 72% 50%, transparent 32%, rgba(5, 5, 5, 0.12) 58%, rgba(5, 5, 5, 0.38) 82%, rgba(5, 5, 5, 0.55) 100%),
     linear-gradient(180deg, rgba(9, 9, 9, 0.32) 0%, transparent 18%, transparent 82%, rgba(9, 9, 9, 0.55) 100%);
   pointer-events: none;
